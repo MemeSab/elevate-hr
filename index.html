@@ -83,25 +83,27 @@
                 <!-- Course Template -->
                 <div class="card glass course-card">
                     <div class="course-thumbnail" style="background-image: url('assets/thumb_culture.png'); background-size: cover; background-position: center;">
-                        <div class="play-overlay">▶</div>
+                        <video class="preview-video" src="https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" playsinline controls style="display: none; width: 100%; height: 100%; object-fit: cover; background: black;"></video>
+                        <div class="play-overlay inline-play-btn">▶</div>
                     </div>
                     <div class="course-info">
                         <span class="category">Leadership</span>
                         <h3>Fostering Remote Culture</h3>
                         <p>Learn how to maintain connection and productivity in distributed teams.</p>
-                        <a href="courses.html" class="course-link">Watch Trailer &rarr;</a>
+                        <a href="course-details.html" class="btn-primary" style="margin-top: var(--spacing-sm); text-align: center; display: block;">Start Full Course</a>
                     </div>
                 </div>
                 <!-- Course Template 2 -->
                 <div class="card glass course-card">
                     <div class="course-thumbnail" style="background-image: url('assets/thumb_law.png'); background-size: cover; background-position: center;">
-                        <div class="play-overlay">▶</div>
+                        <video class="preview-video" src="https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" playsinline controls style="display: none; width: 100%; height: 100%; object-fit: cover; background: black;"></video>
+                        <div class="play-overlay inline-play-btn">▶</div>
                     </div>
                     <div class="course-info">
                         <span class="category">Compliance</span>
                         <h3>Navigating HR Law 2026</h3>
                         <p>Essential legal updates every HR manager needs to know.</p>
-                        <a href="courses.html" class="course-link">Watch Trailer &rarr;</a>
+                        <a href="course-details.html" class="btn-primary" style="margin-top: var(--spacing-sm); text-align: center; display: block;">Start Full Course</a>
                     </div>
                 </div>
             </div>
@@ -239,6 +241,63 @@
                 document.getElementById('thank-you-message').style.display = 'flex';
             });
         }
+
+        // Inline video preview logic for featured course tiles
+        const previewVideos = document.querySelectorAll('.preview-video');
+        const playBtns = document.querySelectorAll('.inline-play-btn');
+
+        playBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function() {
+                const video = previewVideos[index];
+                if (!video) return;
+
+                const thumbnail = this.parentElement;
+                
+                // Keep original background in case we need to reset
+                const originalBg = thumbnail.style.backgroundImage;
+                
+                // Hide play button and thumb background
+                this.style.display = 'none';
+                thumbnail.style.backgroundImage = 'none';
+                thumbnail.style.background = '#000';
+                
+                // Show and play video
+                video.style.display = 'block';
+                video.play();
+                
+                let paywallTriggered = false;
+
+                // 15 sec preview limit
+                video.addEventListener('timeupdate', function() {
+                    if (paywallTriggered) return;
+                    
+                    if (video.currentTime >= 15) {
+                        paywallTriggered = true;
+                        video.pause();
+                        video.style.display = 'none';
+                        
+                        // Show paywall inside the thumbnail
+                        const overlay = document.createElement('div');
+                        overlay.style.position = 'absolute';
+                        overlay.style.top = '0'; overlay.style.left = '0'; overlay.style.right = '0'; overlay.style.bottom = '0';
+                        overlay.style.background = 'rgba(13, 17, 23, 0.9)';
+                        overlay.style.display = 'flex';
+                        overlay.style.flexDirection = 'column';
+                        overlay.style.alignItems = 'center';
+                        overlay.style.justifyContent = 'center';
+                        overlay.style.padding = '1rem';
+                        overlay.style.textAlign = 'center';
+                        overlay.style.backdropFilter = 'blur(4px)';
+                        overlay.style.animation = 'fadeUpAnim 0.3s forwards';
+                        overlay.innerHTML = `
+                            <p style="font-weight: 600; color: white; margin-bottom: 10px; font-size: 1.1rem;">Preview Ended</p>
+                            <a href="login.html" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Sign Up to Continue</a>
+                        `;
+                        thumbnail.appendChild(overlay);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
