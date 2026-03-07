@@ -274,6 +274,93 @@
   color: var(--primary-accent);
 }
 
+/* About Founder Section */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.about-content {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.about-image {
+  flex: 0 0 320px;
+}
+
+.founder-avatar {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 16px;
+  background-image: url('../assets/kash.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-glow);
+  position: relative;
+}
+
+.founder-avatar::after {
+  content: '';
+  position: absolute;
+  top: -15px; left: -15px; right: 15px; bottom: 15px;
+  border: 2px solid var(--primary-accent);
+  border-radius: 16px;
+  z-index: -1;
+  transition: all var(--transition-med);
+}
+
+.about-container:hover .founder-avatar::after {
+  transform: translate(5px, 5px);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.highlight-text {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+  border-left: 3px solid var(--primary-accent);
+  padding-left: 15px;
+}
+
+.about-text p:not(.highlight-text) {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #0a66c2;
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.linkedin-btn:hover {
+  background-color: #004182;
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 4px 15px rgba(10, 102, 194, 0.4);
+}
+
 /* Contact Section */
 .contact-container {
   max-width: 600px;

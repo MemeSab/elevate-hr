@@ -28,6 +28,25 @@
   .course-details {
     margin-top: var(--spacing-md);
   }
+  
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-image {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0 auto;
+  }
+  
+  .founder-avatar::after {
+    display: none;
+  }
+  
+  .highlight-text {
+    text-align: left;
+  }
 }
 
 /* Mobile */
