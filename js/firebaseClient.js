@@ -11,6 +11,16 @@ import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, onSnapshot, q
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
 
 // 1. INITIALIZATION
+/**
+ * SECURITY NOTE: 
+ * Firebase API keys are designed to be public-facing. They are not 'secrets' in the traditional sense 
+ * because they are required by the browser to connect to your project.
+ * 
+ * To SECURE your project: 
+ * You MUST restrict this key in the Google Cloud Console (APIs & Services > Credentials) 
+ * to your specific website domains (e.g., https://memesab.github.io/* and http://localhost/*).
+ * This prevents anyone else from using your project quota.
+ */
 const firebaseConfig = {
     apiKey: "AIzaSyDlzBv-J-BfpNrf_8utpmqEM6kgm2tEwXI",
     authDomain: "elevate-hr-lms.firebaseapp.com",
