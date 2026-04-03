@@ -23,18 +23,34 @@
 
     <!-- Navigation -->
     <nav class="navbar scrolled" id="navbar">
-        <a href="index.html" class="navbar-brand"><img src="images/about-logo.jpg" alt="Intelligent OD Logo"
-                style="height: 35px; width: auto; display: block;"></a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="services.html" class="nav-link">Services</a></li>
-            <li><a href="courses.html" class="nav-link active">Video Courses</a></li>
-            <li><a href="insights.html" class="nav-link">Insights</a></li>
+        <div class="nav-container">
+            <div class="nav-header">
+                <a href="index.html" class="navbar-brand"><img src="images/logo-white-transparent.png"
+                        alt="Intelligent OD Logo" id="nav-logo" style="height: 35px; width: auto; display: block;"></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="courses.html" class="nav-link active">Video Courses</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="login.html" class="nav-link" style="color: var(--primary-accent); font-weight: 600;">Log In /
+                        Register</a></li>
+                <li class="mobile-only" style="margin-top: 1rem;"><a href="index.html#contact" class="btn-primary">Get in Touch</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary desktop-only">Get in Touch</a>
+        </div>
+    </nav>
             <li><a href="login.html" class="nav-link" style="color: var(--primary-accent); font-weight: 600;">Log In /
                     Register</a></li>
+            <li class="mobile-only" style="margin-top: 1rem;"><a href="index.html#contact" class="btn-primary">Get in Touch</a></li>
         </ul>
-        <a href="index.html#contact" class="btn-primary">Get in Touch</a>
+        <a href="index.html#contact" class="btn-primary desktop-only">Get in Touch</a>
     </nav>
 
     <main id="main-content" style="padding-top: 100px;">
@@ -196,6 +212,6 @@
             });
         });
     </script>
+    <script src="js/navbar.js"></script>
 </body>
-
 </html>
