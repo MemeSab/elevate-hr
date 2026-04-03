@@ -70,7 +70,16 @@ It allows users to:
 ---
 
 ## 📸 Preview
-*Include your high-resolution screenshots here once deployed!*
+<p align="center">
+  <img src="images/desktop-home.png" width="100%" alt="Desktop Homepage" />
+</p>
+<p align="center">
+  <img src="images/mobile-home.png" width="45%" alt="Mobile Homepage" />
+  <img src="images/mobile-menu.png" width="45%" alt="Mobile Menu" />
+</p>
+<p align="center">
+  <img src="images/desktop-about.png" width="100%" alt="Desktop About Page" />
+</p>
 
 ---
 
