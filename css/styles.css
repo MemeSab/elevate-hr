@@ -88,16 +88,22 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-md) 5%;
+  padding: var(--spacing-md) 0;
   z-index: 1000;
   transition: all var(--transition-med);
 }
 
+.nav-container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .navbar.scrolled {
-  padding: var(--spacing-sm) 5%;
+  padding: var(--spacing-sm) 0;
   background: var(--bg-surface-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);

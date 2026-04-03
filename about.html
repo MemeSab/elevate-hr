@@ -25,25 +25,28 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-header">
-            <a href="index.html" class="navbar-brand"><img src="images/about-logo.jpg" alt="Intelligent OD Logo"
-                    style="height: 35px; width: auto; display: block;"></a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <div class="nav-container">
+            <div class="nav-header">
+                <a href="index.html" class="navbar-brand"><img src="images/logo-white-transparent.png"
+                        alt="Intelligent OD Logo" id="nav-logo" style="height: 35px; width: auto; display: block;"></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="courses.html" class="nav-link">Video Courses</a></li>
+                <li><a href="insights.html" class="nav-link">Insights</a></li>
+                <li><a href="login.html" class="nav-link" style="color: var(--primary-accent); font-weight: 600;">Log In /
+                        Register</a></li>
+                <li class="mobile-only" style="margin-top: 1rem;"><a href="index.html#contact" class="btn-primary">Get in Touch</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn-primary desktop-only">Get in Touch</a>
         </div>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link active">About</a></li>
-            <li><a href="services.html" class="nav-link">Services</a></li>
-            <li><a href="courses.html" class="nav-link">Video Courses</a></li>
-            <li><a href="insights.html" class="nav-link">Insights</a></li>
-            <li><a href="login.html" class="nav-link" style="color: var(--primary-accent); font-weight: 600;">Log In /
-                    Register</a></li>
-        </ul>
-        <a href="index.html#contact" class="btn-primary">Get in Touch</a>
     </nav>
 
     <!-- Main Content wrapper -->
@@ -536,39 +539,6 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // Update copyright year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', () => {
-                mobileMenu.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            // Close menu when clicking a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-    </script>
+    <script src="js/navbar.js"></script>
 </body>
-
 </html>
