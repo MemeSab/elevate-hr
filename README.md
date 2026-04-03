@@ -70,8 +70,10 @@ It allows users to:
 ---
 
 ## 📸 Preview
-*Include your high-resolution screenshots here once deployed!*
-
+<img width="1631" height="844" alt="I-OD-HP" src="https://github.com/user-attachments/assets/eb312a69-a7dc-446e-84d2-278043690af7" />
+<img width="585" height="870" alt="I-OD-UA" src="https://github.com/user-attachments/assets/4bf7b636-f8ae-4258-b756-7dee756b5ad4" />
+<img width="1788" height="954" alt="I-OD-2" src="https://github.com/user-attachments/assets/25af52c1-3140-403c-8c03-6d50c3a5f8e1" />
+<img width="1778" height="881" alt="I-OD-3" src="https://github.com/user-attachments/assets/e3abed93-2958-4495-98b8-9c6847b7f7c2" />
 ---
 
 ## 📦 Getting Started
