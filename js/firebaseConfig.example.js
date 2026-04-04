@@ -1,11 +1,11 @@
 // firebaseConfig.example.js - SHARE THIS ON GIT
 // Instructions: Copy this file to firebaseConfig.js and add your real keys.
 export const firebaseConfig = {
-    apiKey: "YOUR_API_KEY_HERE",
-    authDomain: "YOUR_AUTH_DOMAIN_HERE",
-    projectId: "YOUR_PROJECT_ID_HERE",
-    storageBucket: "YOUR_STORAGE_BUCKET_HERE",
-    messagingSenderId: "YOUR_SENDER_ID_HERE",
-    appId: "YOUR_APP_ID_HERE",
-    measurementId: "YOUR_MEASUREMENT_ID_HERE"
+  apiKey: "AIzaSyDYJD9djFp1yQ7YvgR4AAumNEYAwI-RoTo",
+  authDomain: "elevate-hr-lms.firebaseapp.com",
+  projectId: "elevate-hr-lms",
+  storageBucket: "elevate-hr-lms.appspot.com",
+  messagingSenderId: "199833732949",
+  appId: "1:199833732949:web:4cad7128094e697eb8d1dc",
+  measurementId: "G-4MT96455D0"
 };
