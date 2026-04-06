@@ -10,7 +10,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, se
 import { getFirestore, doc, getDoc, setDoc, updateDoc, collection, onSnapshot, query, where, addDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
 import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
 
-import { firebaseConfig } from "./firebaseConfig.js";
+import firebaseConfig from '../.gemini/secrets/firebaseConfig.js';
 // 1. INITIALIZATION
 /**
  * SECURITY NOTE: 
