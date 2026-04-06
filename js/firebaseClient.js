@@ -26,9 +26,9 @@ import firebaseConfig from './firebaseConfig.js';
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const storage = getStorage(app);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 // Make available globally if using module
 window.firebaseAuth = auth;
