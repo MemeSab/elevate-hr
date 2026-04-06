@@ -9,6 +9,7 @@ Thumbs.db
 # Local Environment / Secrets
 .env
 .env.local
+.gemini/
 js/firebaseConfig.js
 
 # Temporary Files

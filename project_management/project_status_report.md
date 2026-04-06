@@ -8,6 +8,7 @@
 All foundational branding, authentication, and real-time backend synchronization tasks for the Elevate platform have been successfully completed. Transitions from dark heroes to white sticky headers are now 100% seamless across all sub-pages.
 
 ### 🏁 Recently Completed (Phase 3 Finalized)
+*   **Security Lockdown**: Responded to a reported Firebase breach by rotating API keys and updating `.gitignore` to strictly exclude the entire `.gemini/` directory. All secrets are now locally isolated.
 *   **Global Branding Sync**: Reached 100% fidelity on the navbar logo transitions using dynamic JS `src` swaps. Resolves all "white-on-white" invisibility conflicts.
 *   **Navigation Pop**: Implemented vibrant Sky Blue (#38BDF8) for authentication links, synchronized with the active "Home" state.
 *   **Sub-Page Continuity**: Enforced `scrolled-page` logic on About, Services, Courses, and Insights to ensure branding is authoritative on first render.
