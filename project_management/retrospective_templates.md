@@ -68,3 +68,10 @@ This document is used to track and review the outcome of every major task in the
 * **Reference Issue:** [ELE-12](https://linear.app/elevate-od/issue/ELE-12)
 
 ---
+
+## 📝 Retrospective: [ELE-13 - Global Navbar Logo Invisibility on Scroll]
+**Date Completed:** `2026-04-06`
+* **What was Planned:** Resolve the visibility conflict where the white logo on the dark hero background remained white on the scrolled white sticky header.
+* **What was Done:** Implemented a `filter: brightness(0);` rule specifically for the `.navbar.scrolled .navbar-brand img` selector. 
+* **Outcome:** The branding now programmatically transitions from white (hero) to an authoritative All-Black variant the moment the page background turns white. Verified across all Global Navbars.
+* **Reference Issue:** [ELE-13](https://linear.app/elevate-od/issue/ELE-13)

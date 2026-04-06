@@ -28,16 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Scroll Effect (for pages where navbar isn't permanently scrolled)
+    const navLogo = document.getElementById('nav-logo');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
+            if (navLogo) navLogo.src = 'images/logo.png';
         } else {
             // Only remove if it's not a dashboard or fixed-style page
-            if (!document.body.classList.contains('dashboard-page')) {
+            if (!document.body.classList.contains('dashboard-page') && 
+                !document.body.classList.contains('scrolled-page') &&
+                !document.body.classList.contains('auth-page')) {
                 navbar.classList.remove('scrolled');
+                if (navLogo) navLogo.src = 'images/logo-white-transparent.png';
             }
         }
     });
+
+    // Check on load in case page is already scrolled or needs fixed navbar
+    if (window.scrollY > 50 || 
+        document.body.classList.contains('dashboard-page') || 
+        document.body.classList.contains('scrolled-page') ||
+        document.body.classList.contains('auth-page')) {
+        navbar.classList.add('scrolled');
+        if (navLogo) navLogo.src = 'images/logo.png';
+    }
 
     // 3. Footer Year
     if (yearSpan) {

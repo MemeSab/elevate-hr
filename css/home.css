@@ -229,11 +229,11 @@ body.home-page .navbar:not(.scrolled) .nav-link {
 
 body.home-page .navbar:not(.scrolled) .nav-link:hover,
 body.home-page .navbar:not(.scrolled) .nav-link.active {
-  color: #38BDF8;
+  color: var(--accent-cyan);
 }
 
 body.home-page .navbar:not(.scrolled) .nav-link::after {
-  background-color: #38BDF8;
+  background-color: var(--accent-cyan);
 }
 
 body.home-page .navbar:not(.scrolled) .menu-toggle .bar {
