@@ -10,7 +10,6 @@ Thumbs.db
 .env
 .env.local
 .gemini/
-js/firebaseConfig.js
 
 # Temporary Files
 temp_uploads/
