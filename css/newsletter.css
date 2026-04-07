@@ -8,9 +8,10 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
-    display: none; /* Controlled by JS */
+    display: none !important; /* Controlled by JS */
     opacity: 0;
     z-index: 10000;
+    pointer-events: none; /* GOLD STANDARD: Ensures clicks pass through when invisible */
     align-items: center;
     justify-content: center;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -19,6 +20,7 @@
 .newsletter-modal-overlay.active {
     display: flex !important;
     opacity: 1 !important;
+    pointer-events: auto !important; /* Re-enable clicks when visible */
 }
 
 .newsletter-modal {
