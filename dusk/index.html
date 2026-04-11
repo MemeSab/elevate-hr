@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saba Haroon | Akeneo PIM Plan for Dusk</title>
+    
+    <!-- Libraries via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        /* Dusk-Inspired Branding Tokens */
+        :root {
+            --dusk-bg: #F9F4F0;
+            --dusk-maroon: #9C1F2E;
+            --dusk-sage: #6B7C67; 
+            --dusk-charcoal: #333333;
+            --dusk-text: #2D2D2D;
+            --dusk-border: rgba(51, 51, 51, 0.08);
+            --serif: 'Playfair Display', serif;
+            --sans: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--sans);
+            background-color: var(--dusk-bg);
+            color: var(--dusk-text);
+        }
+
+        .reveal .slides {
+            text-align: left;
+        }
+
+        /* Typography Refinement */
+        .reveal h1 { font-family: var(--serif); font-size: 2.2rem !important; color: var(--dusk-charcoal) !important; font-weight: 700 !important; margin-bottom: 25px !important; line-height: 1.1 !important; text-transform: none !important; }
+        .reveal h2 { font-family: var(--serif); font-size: 1.8rem !important; color: var(--dusk-charcoal) !important; margin-bottom: 20px !important; border-bottom: 2px solid var(--dusk-maroon); display: inline-block; padding-bottom: 10px; text-transform: none !important; }
+        .reveal h3 { font-family: var(--serif); font-size: 1.2rem !important; color: var(--dusk-text) !important; font-style: italic; margin-bottom: 15px !important; }
+        .reveal h4 { font-family: var(--sans); font-size: 0.95rem !important; font-weight: 600; color: var(--dusk-maroon) !important; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .reveal p, .reveal li {
+            font-family: var(--sans);
+            font-size: 0.85rem !important;
+            line-height: 1.6;
+            color: var(--dusk-text);
+        }
+
+        /* High-End Card Aesthetic */
+        .highlight-card {
+            background: white;
+            border: 1px solid var(--dusk-border);
+            @apply p-6 rounded-sm shadow-sm transition-all duration-300;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border-radius: 4px;
+        }
+
+        .highlight-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+        }
+
+        .kicker {
+            font-family: var(--sans);
+            font-size: 0.6rem !important;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--dusk-maroon);
+            margin-bottom: 8px !important;
+            display: block;
+        }
+
+        .conversational-note {
+            @apply mt-8 p-6 bg-white border border-l-4 border-l-maroon-700 text-[0.75rem] font-medium leading-relaxed italic text-gray-700;
+            border-left-color: var(--dusk-maroon) !important;
+            background: white;
+            box-shadow: 0 2px 10px rgba(156, 31, 46, 0.03);
+        }
+
+        .step-pill {
+            @apply px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-[0.55rem] font-bold uppercase tracking-widest text-neutral-500;
+        }
+
+        .chevron-step {
+            @apply relative px-6 py-4 bg-white text-dusk-text font-semibold rounded-sm border border-neutral-100 text-[0.7rem] uppercase tracking-widest;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border-radius: 4px;
+        }
+
+        .chevron-step::after {
+            content: '→';
+            @apply absolute -right-6 top-1/2 -translate-y-1/2 text-dusk-maroon font-bold text-lg;
+        }
+
+        .chevron-step:last-child::after { content: ''; }
+
+        .reveal .slides section { padding: 40px; }
+
+        .reveal .controls-arrow { color: var(--dusk-maroon) !important; }
+        .reveal .progress span { background: var(--dusk-maroon) !important; }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.4em;
+            color: #9CA3AF;
+            z-index: 1000;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-family: var(--sans);
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--dusk-maroon);
+        }
+
+        /* Roadmap Specific Styles */
+        .roadmap-node {
+            @apply relative flex flex-col items-center text-center p-4;
+        }
+        .roadmap-node::before {
+            content: '';
+            @apply absolute top-[30px] left-0 right-0 h-[2px] bg-neutral-200 -z-10;
+        }
+        .roadmap-node:first-child::before { @apply left-1/2; }
+        .roadmap-node:last-child::before { @apply right-1/2; }
+        
+        .roadmap-circle {
+            @apply w-12 h-12 rounded-full border-4 border-dusk-bg bg-white shadow-md flex items-center justify-center text-xs font-bold mb-4 transition-all;
+            border-color: var(--dusk-bg);
+        }
+        .roadmap-node.p1 .roadmap-circle { background-color: var(--dusk-sage); color: white; border-color: white; }
+        .roadmap-node.p2 .roadmap-circle { background-color: var(--dusk-charcoal); color: white; border-color: white; }
+        .roadmap-node.p3 .roadmap-circle { background-color: var(--dusk-sage); color: white; border-color: white; }
+        .roadmap-node.p4 .roadmap-circle { background-color: var(--dusk-charcoal); color: white; border-color: white; }
+        .roadmap-node.p5 .roadmap-circle { background-color: var(--dusk-maroon); color: white; border-color: white; }
+
+        .roadmap-node.p1::after { content: ''; position: absolute; top: 30px; left: 50%; width: 100%; height: 2px; background: var(--dusk-sage); z-index: -5; }
+        .roadmap-node.p2::after { content: ''; position: absolute; top: 30px; left: 50%; width: 100%; height: 2px; background: var(--dusk-charcoal); z-index: -5; }
+        .roadmap-node.p3::after { content: ''; position: absolute; top: 30px; left: 50%; width: 100%; height: 2px; background: var(--dusk-sage); z-index: -5; }
+        .roadmap-node.p4::after { content: ''; position: absolute; top: 30px; left: 50%; width: 100%; height: 2px; background: var(--dusk-charcoal); z-index: -5; }
+        .roadmap-node.p5::after { display: none; }
+
+        .roadmap-node .roadmap-circle {
+            @apply shadow-lg;
+            transform: scale(1.1);
+        }
+
+        /* Branding Overrides */
+        .reveal .slides section {
+            background-color: var(--dusk-bg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Title Slide -->
+            <section>
+                <div class="accent-bar"></div>
+                <div class="w-full max-w-xl mx-auto py-20 flex flex-col items-center justify-center text-center">
+                    <div class="mb-4">
+                        <span class="kicker">Strategic Integration Proposal</span>
+                        <h1 class="mt-4 !text-5xl">Setting up Akeneo PIM</h1>
+                        <p class="text-lg font-light text-neutral-500 italic">A structured delivery plan to support scalable product data</p>
+                    </div>
+                    
+                    <div class="flex justify-center mb-16">
+                        <img src="dusk_logo_bold.png" alt="Dusk Logo" class="w-64 mix-blend-multiply">
+                    </div>
+                    
+                    <div class="text-center">
+                        <p class="text-sm tracking-[0.3em] uppercase text-neutral-800 font-bold">
+                            Saba Haroon
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: The Transformation -->
+            <section>
+                <span class="kicker">Business Transformation</span>
+                <h2 class="mb-10">From Messy Data to Sustainable Growth</h2>
+                <div class="grid grid-cols-12 gap-8 items-center">
+                    <div class="col-span-5 highlight-card">
+                        <h4 class="mb-4">Today's Hurdles</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-times text-dusk-maroon mt-1 mr-3"></i> <span>Information is scattered across platforms</span></li>
+                            <li class="flex items-start"><i class="fas fa-times text-dusk-maroon mt-1 mr-3"></i> <span>Duplicated effort in NetSuite and Shopify</span></li>
+                            <li class="flex items-start"><i class="fas fa-times text-dusk-maroon mt-1 mr-3"></i> <span>High risk of launch inaccuracies</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-2 text-center text-dusk-maroon">
+                        <i class="fas fa-long-arrow-alt-right text-4xl"></i>
+                    </div>
+                    <div class="col-span-5 highlight-card" style="background: #FFF; border-top: 3px solid var(--dusk-sage);">
+                        <h4 class="mb-4" style="color: var(--dusk-sage) !important;">Dusk's Future</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><i class="fas fa-check text-dusk-sage mt-1 mr-3"></i> <span>Single, unified master vault</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-dusk-sage mt-1 mr-3"></i> <span>Automated real-time updates</span></li>
+                            <li class="flex items-start"><i class="fas fa-check text-dusk-sage mt-1 mr-3"></i> <span>Unlocking rapid product scaling</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="conversational-note">
+                    <p>Dusk is a premium brand, and your tech stack should reflect that. You aren't just buying software. You're moving from fixing mistakes to growing the business. I'll help you stop worrying about spreadsheets and start launching products with the confidence a high-end brand deserves.</p>
+                </div>
+            </section>
+
+            <!-- Slide 3: How I Work -->
+            <section>
+                <span class="kicker">Project Management</span>
+                <h2 class="mb-10">Agile Implementation Strategy</h2>
+                <div class="flex flex-wrap gap-4 justify-center mb-12">
+                    <div class="chevron-step">1. Discovery</div>
+                    <div class="chevron-step">2. Design</div>
+                    <div class="chevron-step">3. Build</div>
+                    <div class="chevron-step">4. Test</div>
+                    <div class="chevron-step">5. Handover</div>
+                </div>
+                <div class="grid grid-cols-2 gap-10 items-start">
+                    <div class="p-4 border-l-2 border-dusk-maroon">
+                        <h4 class="mb-2">Fix the worst bits first</h4>
+                        <p>I'll focus on the most painful data problems first. We'll stop the data issues within the first 30 days.</p>
+                    </div>
+                    <div class="p-4 border-l-2 border-dusk-sage">
+                        <h4 class="mb-2" style="color: var(--dusk-sage) !important;">Total Transparency</h4>
+                        <p>I work in 2-week sprints. You'll see progress every fortnight in our Linear dashboards, so we're always aligned on Dusk's goals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Phase 1 -->
+            <section>
+                <span class="kicker">Technical Roadmap</span>
+                <h2 class="mb-8">Phase 1: Finding and Checking</h2>
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="highlight-card">
+                        <span class="step-pill">1.1</span>
+                        <h4 class="mt-4">Inventory</h4>
+                        <p class="text-[0.75rem] text-gray-600">Auditing sources like NetSuite, Shopify, and local files.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">1.2</span>
+                        <h4 class="mt-4">Structure</h4>
+                        <p class="text-[0.75rem] text-gray-600">Planning labels, attributes, and categories for the new system.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">1.3</span>
+                        <h4 class="mt-4">Ownership</h4>
+                        <p class="text-[0.75rem] text-gray-600">Deciding who updates what and who approves the final info.</p>
+                    </div>
+                </div>
+                <div class="conversational-note">
+                    <p>This is where I’d find the messy bits early, so we’re not unpicking things later. It’s about making sure the structure works properly before anything gets built on top.</p>
+                </div>
+            </section>
+
+            <!-- Slide 5: Phase 2 -->
+            <section>
+                <span class="kicker">Technical Roadmap</span>
+                <h2 class="mb-8">Phase 2: Integrations & Data Flow</h2>
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="highlight-card">
+                        <span class="step-pill">2.1</span>
+                        <h4 class="mt-4">Connectivity</h4>
+                        <p class="text-[0.75rem] text-gray-600">Building safe, high-speed links between NetSuite and Akeneo.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">2.2</span>
+                        <h4 class="mt-4">Handover Rules</h4>
+                        <p class="text-[0.75rem] text-gray-600">Defining the rules that determine when data moves to Shopify.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">2.3</span>
+                        <h4 class="mt-4">Permissions</h4>
+                        <p class="text-[0.75rem] text-gray-600">Securing who can edit data to guarantee high-quality info.</p>
+                    </div>
+                </div>
+                <div class="conversational-note">
+                    <p>I'd work closely with the developers to make sure each integration is set up properly. The aim is a clean, reliable flow for Dusk’s team, without exposing the underlying complexity.</p>
+                </div>
+            </section>
+
+            <!-- Slide 6: Phase 3 -->
+            <section>
+                <span class="kicker">Technical Roadmap</span>
+                <h2 class="mb-8">Phase 3: Data Cleansing & Migration</h2>
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="highlight-card">
+                        <span class="step-pill">3.1</span>
+                        <h4 class="mt-4">Bulk Move</h4>
+                        <p class="text-[0.75rem] text-gray-600">Moving Dusk's core product list into the new PIM system.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">3.2</span>
+                        <h4 class="mt-4">Scrubbing</h4>
+                        <p class="text-[0.75rem] text-gray-600">Deleting duplicates and fixing broken symbols from old records.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">3.3</span>
+                        <h4 class="mt-4">Final Checks</h4>
+                        <p class="text-[0.75rem] text-gray-600">Reviewing every record to ensure the data is perfect.</p>
+                    </div>
+                </div>
+                <div class="conversational-note">
+                    <p>This phase is all about cleaning things up properly before anything moves across, so Dusk isn’t dealing with legacy issues later.</p>
+                </div>
+            </section>
+
+            <!-- Slide 7: Phase 4 -->
+            <section>
+                <span class="kicker">Technical Roadmap</span>
+                <h2 class="mb-8">Phase 4: Optimisation and Readiness</h2>
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="highlight-card">
+                        <span class="step-pill">4.1</span>
+                        <h4 class="mt-4">Performance</h4>
+                        <p class="text-[0.75rem] text-gray-600">Testing the system to ensure everything loads ultra-fast.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">4.2</span>
+                        <h4 class="mt-4">User Testing</h4>
+                        <p class="text-[0.75rem] text-gray-600">Guided sessions where your team members check the actual tools.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">4.3</span>
+                        <h4 class="mt-4">Refinement</h4>
+                        <p class="text-[0.75rem] text-gray-600">Smoothing every detail to ensure the tool is easy to use.</p>
+                    </div>
+                </div>
+                <div class="conversational-note">
+                    <p>I wouldn’t move to Go-Live until the team is fully comfortable. The system needs to work for Dusk’s people, not just be technically complete.</p>
+                </div>
+            </section>
+
+            <!-- Slide 8: Phase 5 -->
+            <section>
+                <span class="kicker">Technical Roadmap</span>
+                <h2 class="mb-8">Phase 5: Launch and Autonomy</h2>
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <div class="highlight-card">
+                        <span class="step-pill">5.1</span>
+                        <h4 class="mt-4">Manuals</h4>
+                        <p class="text-[0.7rem] text-gray-600">Visual guides to help everyone learn the system quickly.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">5.2</span>
+                        <h4 class="mt-4">Support</h4>
+                        <p class="text-[0.7rem] text-gray-600">On-call help available for the first 30 days after launch.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="step-pill">5.3</span>
+                        <h4 class="mt-4">Results Review</h4>
+                        <p class="text-[0.7rem] text-gray-600">Checking our targets: launch time, accuracy, and operational speed.</p>
+                    </div>
+                </div>
+                <div class="conversational-note">
+                    <p>A successful launch and project autonomy is about handing things over properly, so the team can run it day to day without relying on external support. I put the system and guidance in place to make that possible.</p>
+                </div>
+            </section>
+
+            <!-- Slide 9: Projected Results -->
+            <section>
+                <span class="kicker">Dusk Growth Metrics</span>
+                <h2 class="mb-12 text-center">Projected Results</h2>
+                <div class="grid grid-cols-3 gap-8">
+                    <div class="highlight-card text-center" style="border-bottom: 4px solid var(--dusk-maroon);">
+                        <div class="text-5xl font-bold text-dusk-charcoal mb-4">-70%</div>
+                        <h4 class="mb-2">Manual Work</h4>
+                        <p class="text-[0.75rem]">Less time typing, more time on growth strategy.</p>
+                    </div>
+                    <div class="highlight-card text-center" style="border-bottom: 4px solid var(--dusk-sage);">
+                        <div class="text-5xl font-bold text-dusk-charcoal mb-4">-40%</div>
+                        <h4 class="mb-2">Launch Time</h4>
+                        <p class="text-[0.75rem]">New product launches become lightning fast.</p>
+                    </div>
+                    <div class="highlight-card text-center" style="border-bottom: 4px solid var(--dusk-maroon);">
+                        <div class="text-5xl font-bold text-dusk-charcoal mb-4">99%</div>
+                        <h4 class="mb-2">Data Accuracy</h4>
+                        <p class="text-[0.75rem]">Total info accuracy across every sales channel.</p>
+                    </div>
+                </div>
+                <div class="mt-16 text-center italic text-lg text-neutral-500 max-w-2xl mx-auto">
+                    "Helping Dusk move from fixing errors to scaling big ideas."
+                </div>
+            </section>
+
+            <!-- Slide 10: Accountability -->
+            <section>
+                <span class="kicker">Project Controls</span>
+                <h2 class="mb-10 font-bold text-center">Accountability and Records</h2>
+                <div class="grid grid-cols-2 gap-10">
+                    <div class="highlight-card">
+                        <h4 class="text-dusk-maroon mb-6 text-center">Live Dashboards</h4>
+                        <div class="space-y-4">
+                            <a href="https://linear.app/elevate-od/document/risk-register-and-issue-log-25b30f9ab19b" target="_blank" class="flex justify-between items-center p-4 bg-neutral-50 rounded hover:bg-neutral-100 border border-neutral-100 transition-colors">
+                                <span class="text-[0.7rem] font-bold text-neutral-600 tracking-wider">🛡️ PROJECT RISK LOG</span>
+                                <i class="fas fa-external-link-alt text-[0.6rem] text-neutral-300"></i>
+                            </a>
+                            <a href="https://linear.app/elevate-od/document/weekly-status-update-log-7705f2505fe1" target="_blank" class="flex justify-between items-center p-4 bg-neutral-50 rounded hover:bg-neutral-100 border border-neutral-100 transition-colors">
+                                <span class="text-[0.7rem] font-bold text-neutral-600 tracking-wider">📈 WEEKLY STATUS LOG</span>
+                                <i class="fas fa-external-link-alt text-[0.6rem] text-neutral-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-center flex flex-col justify-center">
+                        <i class="fas fa-fingerprint text-3xl mb-4 text-dusk-maroon opacity-20"></i>
+                        <h4 class="mb-3">I record every step.</h4>
+                        <p class="text-[0.85rem] text-gray-600 leading-relaxed">Dusk management will never have to ask "Where are we?". I keep every update, decision, and roadblock recorded in Linear so you are always in the loop.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 11: Visual Roadmap -->
+            <section>
+                <div class="flex flex-col h-full px-10">
+                    <span class="kicker">Execution Plan</span>
+                    <h2 class="mb-12">Visual Delivery Roadmap</h2>
+                    
+                    <div class="grid grid-cols-5 gap-6">
+                        <!-- P1 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-full py-4 bg-[#6B7C67] text-white font-bold text-xl rounded-sm mb-6 flex flex-col items-center justify-center shadow-sm">
+                                <span>P1</span>
+                                <span class="text-[0.6rem] font-medium opacity-80 uppercase tracking-widest mt-1">Target: Apr 24</span>
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold mb-4 tracking-widest text-center text-[#9C1F2E]">DISCOVERY</h4>
+                            <ul class="text-[0.65rem] text-neutral-600 space-y-2 list-none p-0 m-0 text-center">
+                                <li>Data Audit</li>
+                                <li>Structure Design</li>
+                                <li>Role Mapping</li>
+                            </ul>
+                        </div>
+                        <!-- P2 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-full py-4 bg-[#333333] text-white font-bold text-xl rounded-sm mb-6 flex flex-col items-center justify-center shadow-sm">
+                                <span>P2</span>
+                                <span class="text-[0.6rem] font-medium opacity-80 uppercase tracking-widest mt-1">Target: May 15</span>
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold mb-4 tracking-widest text-center text-[#9C1F2E]">DESIGN</h4>
+                            <ul class="text-[0.65rem] text-neutral-600 space-y-2 list-none p-0 m-0 text-center">
+                                <li>API Setup</li>
+                                <li>Trans. Logic</li>
+                                <li>RBAC Config</li>
+                            </ul>
+                        </div>
+                        <!-- P3 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-full py-4 bg-[#6B7C67] text-white font-bold text-xl rounded-sm mb-6 flex flex-col items-center justify-center shadow-sm">
+                                <span>P3</span>
+                                <span class="text-[0.6rem] font-medium opacity-80 uppercase tracking-widest mt-1">Target: Jun 05</span>
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold mb-4 tracking-widest text-center text-[#9C1F2E]">BUILD</h4>
+                            <ul class="text-[0.65rem] text-neutral-600 space-y-2 list-none p-0 m-0 text-center">
+                                <li>Bulk Move</li>
+                                <li>Data Scrubbing</li>
+                                <li>Migration Assay</li>
+                            </ul>
+                        </div>
+                        <!-- P4 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-full py-4 bg-[#333333] text-white font-bold text-xl rounded-sm mb-6 flex flex-col items-center justify-center shadow-sm">
+                                <span>P4</span>
+                                <span class="text-[0.6rem] font-medium opacity-80 uppercase tracking-widest mt-1">Target: Jun 19</span>
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold mb-4 tracking-widest text-center text-[#9C1F2E]">TEST</h4>
+                            <ul class="text-[0.65rem] text-neutral-600 space-y-2 list-none p-0 m-0 text-center">
+                                <li>Stress Testing</li>
+                                <li>UAT Labs</li>
+                                <li>UX Polishing</li>
+                            </ul>
+                        </div>
+                        <!-- P5 -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-full py-4 bg-[#9C1F2E] text-white font-bold text-xl rounded-sm mb-6 flex flex-col items-center justify-center shadow-sm">
+                                <span>P5</span>
+                                <span class="text-[0.6rem] font-medium opacity-80 uppercase tracking-widest mt-1">Target: Jun 26</span>
+                            </div>
+                            <h4 class="text-[0.75rem] font-bold mb-4 tracking-widest text-center text-[#9C1F2E]">LAUNCH</h4>
+                            <ul class="text-[0.65rem] text-neutral-600 space-y-2 list-none p-0 m-0 text-center">
+                                <li>SOP Manuals</li>
+                                <li>Hyper-care</li>
+                                <li>ROI Review</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="conversational-note bg-white/50 backdrop-blur-sm mt-12">
+                        <p class="m-0 italic">Every subtask here is already mapped into a 15-step Linear backlog. It starts with Discovery (P1) and moves through to ROI Review (P5), keeping things clear, structured, and fully traceable at each stage.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 12: Conclusion -->
+            <section class="text-center">
+                <div class="accent-bar"></div>
+                <div class="w-full max-w-3xl mx-auto py-24 flex flex-col items-center justify-center text-center">
+                    <h1 class="mb-12 text-6xl">Thank You</h1>
+                    
+                    <div class="w-full max-w-2xl mx-auto border-t border-neutral-100 pt-10 text-center">
+                        <p class="text-2xl font-light text-neutral-600 italic leading-relaxed">
+                            Making sure the technology works properly, the process is clear, and Dusk is set up to grow.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-16 text-center">
+                        <p class="text-lg tracking-[0.3em] uppercase text-neutral-800 font-bold mb-2">
+                            Saba Haroon
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>Saba Haroon | Akeneo PIM Implementation | April 2026</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'fade',
+            backgroundTransition: 'fade',
+            mouseWheel: true,
+            controls: true,
+            progress: true,
+            slideNumber: 'c/t',
+            width: 1100,
+            height: 700,
+            plugins: []
+        });
+    </script>
+</body>
+</html>
