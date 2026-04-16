@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dusk Architecture - High Resolution Flows</title>
+    <script>
+        (function() {
+            const pass = "2026";
+            if (sessionStorage.getItem("dusk_auth") !== "true") {
+                const input = prompt("Please enter the 4-digit access code:");
+                if (input === pass) {
+                    sessionStorage.setItem("dusk_auth", "true");
+                } else {
+                    document.documentElement.innerHTML = "Access Denied.";
+                    window.location.href = "https://www.google.com";
+                }
+            }
+        })();
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #111111;
+            --text-main: #FFFFFF;
+            --dusk-maroon: #9C1F2E;
+            --dusk-sage: #6B7C67;
+            --dusk-blush: #E6D5D1;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .slide-container {
+            background: #1a1a1a;
+            width: 100%;
+            max-width: 1400px;
+            padding: 60px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        .kicker {
+            color: var(--dusk-maroon);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .mermaid {
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .legend-card {
+            border-left: 4px solid var(--text-main);
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1rem;
+            margin: 40px auto 0;
+            max-width: 800px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .conversational-note {
+            color: #AAA;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+
+        /* Zapier Pop-up styles */
+        #zapier-modal {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2a2a2a;
+            border: 2px solid var(--dusk-maroon);
+            padding: 40px;
+            border-radius: 12px;
+            z-index: 1000;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+        }
+
+        #zapier-modal.active {
+            display: block;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: translate(-50%, -40%) scale(0.8); opacity: 0; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 999;
+            border-radius: 12px;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #AAA;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .close-btn:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <!-- Large Slide 3: Status Quo -->
+    <div class="slide-container">
+        <span class="kicker">Operational Analysis</span>
+        <h2>The Fragile Status Quo (Manual Architecture)</h2>
+        
+        <div class="mermaid">
+            %%{init: {'theme': 'dark'}}%%
+            graph TD
+                T["👥 Product Teams<br/>Sales / Ops / Marketing"]
+                E[("📊 Excel Spreadsheets<br/>Manual Source of Product Data")]
+                
+                subgraph Silos["Manual Silos"]
+                    direction TB
+                    N["💰 NetSuite<br/>ERP / Finance"]
+                    W["🏭 WMS<br/>Warehouse"]
+                    S["🛒 Shopify<br/>eCommerce"]
+                end
+                
+                C["👩 Customers<br/>Inconsistent Experience"]
+
+                T -->|"Manual Data Entry"| E
+                E -.->|"Manual Copy & Paste"| N
+                E -.->|"Manual Copy & Paste"| W
+                E -.->|"Manual Copy & Paste"| S
+                
+                N -.->|"Data Inconsistencies"| S
+                W -.->|"Inventory Mismatches"| S
+                
+                S -.->|"Outdated / Incorrect Data"| C
+
+                style T fill:#1a1a1a,stroke:#03a9f4,color:#fff
+                style E fill:#1a1a1a,stroke:#f44336,stroke-width:4px,color:#fff
+                style Silos fill:#111,stroke:#999,stroke-width:2px,stroke-dasharray: 5 5,color:#fff
+                style N fill:#1a1a1a,stroke:#ff9800,stroke-width:2px,color:#fff
+                style W fill:#1a1a1a,stroke:#ff9800,stroke-width:2px,color:#fff
+                style S fill:#1a1a1a,stroke:#ff9800,stroke-width:2px,color:#fff
+                style C fill:#1a1a1a,stroke:#e91e63,stroke-width:2px,color:#fff
+        </div>
+        
+        <div class="legend-card" style="border-color: #f44336;">
+            <strong style="color:#f44336;">Manual Silos:</strong> The dashed area represents a fragmented architecture where information is trapped in disconnected systems, requiring continual human intervention.
+        </div>
+
+        <p class="conversational-note">"Every manual 'copy-paste' is a hidden operational cost."</p>
+    </div>
+
+
+    <!-- Large Slide 4: Automated Architecture -->
+    <div class="slide-container">
+        <span class="kicker">Operational Analysis</span>
+        <h2>The Scalable Growth Model (Automated Architecture)</h2>
+        
+        <div class="mermaid" onclick="toggleZapier()">
+            %%{init: {'theme': 'dark'}}%%
+            graph TD
+                T["👥 Product Teams<br/>Sales / Ops / Marketing"]
+                A[("🎯 Akeneo PIM<br/>Single Source of Truth")]
+                Z["⚡ Zapier<br/>(Click To Reveal Strategic Value)"]
+                
+                subgraph Ecosystem["Connected Ecosystem"]
+                    direction LR
+                    N["💰 NetSuite<br/>Pricing / Finance"]
+                    S["🛒 Shopify<br/>eCommerce"]
+                    W["🏭 WMS<br/>Inventory / Fulfilment"]
+                end
+                
+                C["👩 Customers<br/>Accurate & Consistent Experience"]
+
+                T -->|"Centralised Product Creation"| A
+                A -->|"Automated Data Distribution"| Z
+                
+                Z --> N
+                Z --> S
+                Z --> W
+                
+                S -->|"Optimised Customer Experience"| C
+
+                style T fill:#1a1a1a,stroke:#03a9f4,color:#fff
+                style A fill:#1a1a1a,stroke:#ffc107,stroke-width:4px,color:#fff
+                style Z fill:#1a1a1a,stroke:#9c27b0,stroke-width:4px,color:#fff
+                style Ecosystem fill:#111,stroke:#6B7C67,stroke-width:2px,color:#fff
+                style N fill:#1a1a1a,stroke:#4caf50,stroke-width:2px,color:#fff
+                style S fill:#1a1a1a,stroke:#4caf50,stroke-width:2px,color:#fff
+                style W fill:#1a1a1a,stroke:#4caf50,stroke-width:2px,color:#fff
+                style C fill:#1a1a1a,stroke:#e91e63,stroke-width:2px,color:#fff
+        </div>
+        
+        <!-- Zapier Interactive Popup -->
+        <div id="zapier-modal">
+            <i class="fas fa-times close-btn" onclick="toggleZapier(event)"></i>
+            <span class="kicker">Strategic Perspective</span>
+            <h3 style="margin-top: 0;">Agile Middleware Strategy</h3>
+            
+            <div style="margin-top: 30px; display: grid; gap: 20px;">
+                <div style="display: flex; gap: 15px;">
+                    <span style="font-size: 1.5rem;">⚙️</span>
+                    <div>
+                        <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Strategic Discovery</strong>
+                        <p style="font-size: 0.9rem; color: #BBB; margin: 0; line-height: 1.5;">While we finalise the exact middleware in Phase 1, I recommend Zapier based on its track record of rapid deployment and reliability.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <span style="font-size: 1.5rem;">⚡</span>
+                    <div>
+                        <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Low-Code Advantage</strong>
+                        <p style="font-size: 0.9rem; color: #BBB; margin: 0; line-height: 1.5;">It provides a powerful alternative to custom-built plugins, allowing us to automate complex data flows without heavy engineering costs.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <span style="font-size: 1.5rem;">🎯</span>
+                    <div>
+                        <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Beyond Webhooks</strong>
+                        <p style="font-size: 0.9rem; color: #BBB; margin: 0; line-height: 1.5;">Zapier offers the flexibility to map multi-step logic and connect future tools (like CRM or WMS) as Dusk evolves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-overlay" id="modal-overlay" onclick="toggleZapier()"></div>
+
+        <div class="legend-card" style="border-color: var(--dusk-sage);">
+            <strong style="color: var(--dusk-sage);">Connected Ecosystem:</strong> The solid area represents an automated data flow where PIM act as the orchestrator for all connected systems.
+        </div>
+
+        <p class="conversational-note">"Create once, deliver everywhere, with total confidence."</p>
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+
+        // Carry over the interactive Zapier functionality
+        function toggleZapier(e) {
+            if(e) e.stopPropagation();
+            const modal = document.getElementById('zapier-modal');
+            const overlay = document.getElementById('modal-overlay');
+            modal.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

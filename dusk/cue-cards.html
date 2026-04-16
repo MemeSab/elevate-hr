@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dusk Pitch — Cue Cards</title>
+    <script>
+        (function() {
+            const pass = "2026";
+            if (sessionStorage.getItem("dusk_auth") !== "true") {
+                const input = prompt("Please enter the 4-digit access code:");
+                if (input === pass) {
+                    sessionStorage.setItem("dusk_auth", "true");
+                } else {
+                    document.documentElement.innerHTML = "Access Denied.";
+                    window.location.href = "https://www.google.com";
+                }
+            }
+        })();
+    </script>
     <style>
         :root {
             --bg-color: #111111;
@@ -79,12 +93,14 @@
         <span class="slide-number">Slide 1: Title</span>
         <div class="action-cue">👉 Open presentation on laptop</div>
         <p class="script-text">Welcome Polly, Max. I'm excited to walk you through exactly how we move Dusk from fixing manual mistakes to truly <strong>scaling the business.</strong></p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Talking Point:</em> Acknowledge Dusk's stunning market position, and frame this pitch as the necessary step to ensure their internal systems match their external prestige.</p>
     </div>
 
     <!-- Slide 2 -->
     <div class="cue-card">
         <span class="slide-number">Slide 2: The Problem</span>
-        <p class="script-text">Max, you know Dusk is a premium brand. The goal here is to make your product infrastructure <strong>just as seamless as your customer experience.</strong></p>
+        <p class="script-text">Max, you know <strong>Dusk delivers 'Luxury for Less'.</strong> The goal here is to make your product infrastructure <strong>just as seamless as your customer experience.</strong></p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> When backend data is fragmented, it bleeds into the front end. Customers see delayed seasonal drops or mismatched product descriptions. We need to protect the brand promise.</p>
     </div>
 
     <!-- Slide 3 -->
@@ -92,68 +108,82 @@
         <span class="slide-number">Slide 3: Fragile Status Quo</span>
         <div class="action-cue">👉 Let them look at the red arrows</div>
         <p class="script-text">Polly, as a Transformation Manager, this is probably painful to look at. Every manual 'copy-paste' here represents a <strong>hidden operational cost</strong> and a huge risk.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> Point out that NetSuite and Shopify are powerful, but relying on humans to act as the "glue" between them causes bottlenecks and burnout.</p>
     </div>
 
     <!-- Slide 4 -->
     <div class="cue-card">
         <span class="slide-number">Slide 4: Scalable Growth</span>
-        <p class="script-text">This is the solution we are building towards. Create the data once, and deliver everywhere, with <strong>total confidence.</strong></p>
-        <div class="action-cue" style="margin-top: 20px; margin-bottom: 0;">👉 ACTION: Click the purple 'Zapier' node to show the secret synergy popup!</div>
+        <p class="script-text">This is the solution we are building towards: a centralized brain. Create the data once, and deliver everywhere, with <strong>total confidence.</strong></p>
+        <div class="action-cue" style="margin-top: 20px; margin-bottom: 15px;">👉 ACTION: Click the purple 'Zapier' node to show the secret synergy popup!</div>
+        <p style="font-size: 1rem; color: #AAA;"><em>Depth:</em> Akeneo holds the core data, while Zapier moves it to Shopify/NetSuite. This is a <strong>practical first step</strong> into automation avoiding heavy custom dev, while remaining flexible for future workflows like inventory or returns.</p>
     </div>
 
     <!-- Slide 5 -->
     <div class="cue-card">
         <span class="slide-number">Slide 5: Agile Timeline</span>
         <p class="script-text">I’ve mapped every subtask into a clear backlog with <strong>defined target dates</strong>. Delivery is structured and completely transparent to you both at every stage.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Talking Point:</em> Stress that this isn't a vague timeline. This is an executable, agile roadmap designed to show velocity and mitigate delays.</p>
     </div>
 
     <!-- Slide 6 -->
     <div class="cue-card">
-        <span class="slide-number">Slide 6: Phase 1 (Audit)</span>
-        <p class="script-text">This is where I’d find the <strong>messy bits early</strong>, so we’re not unpicking things later. It’s about making sure the structure works properly before anything gets built on top.</p>
+        <span class="slide-number">Slide 6: Phase 1 (Audit & Discovery)</span>
+        <p class="script-text">This is where I’d find the <strong>messy bits early</strong>, so we’re not unpicking things later. We do a 'Data Health Check' before we touch the code.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> I won't just look at tech—I will sit with the team who actually inputs the data to find their daily friction points. No more 'Gap Analysis', just clear mapping.</p>
     </div>
 
     <!-- Slide 7 -->
     <div class="cue-card">
-        <span class="slide-number">Slide 7: Phase 2 (Design)</span>
-        <p class="script-text">Polly, a successful transformation means complexity should sit in the backend, not in day-to-day use. I want to create workflows that feel <strong>simple and clear for the team</strong>, with strict controls underneath.</p>
+        <span class="slide-number">Slide 7: Phase 2 (Structural Design)</span>
+        <p class="script-text">Polly, a successful transformation means complexity should sit in the backend. Handled through <strong>Catalog Architecture</strong> instead of manual messy folders.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> Setting up strict 'Quality Rules' means bad data physically cannot enter the system. We're formalizing the team permissions here too.</p>
     </div>
 
     <!-- Slide 8 -->
     <div class="cue-card">
-        <span class="slide-number">Slide 8: Phase 3 (Sync)</span>
-        <p class="script-text">This is where <strong>manual work is removed.</strong> Once the integrations are set up properly, product data can flow automatically and go live without delays or errors.</p>
+        <span class="slide-number">Slide 8: Phase 3 (Integration & Automation)</span>
+        <p class="script-text">This is where <strong>manual work is completely removed.</strong> Once the NetSuite and Shopify integrations are connected, data flows automatically.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Talking Point:</em> This 'End-to-End Testing' phase is what transforms the business from "reactive" to "proactive".</p>
     </div>
 
     <!-- Slide 9 -->
     <div class="cue-card">
-        <span class="slide-number">Slide 9: Phase 4 (Migrate)</span>
-        <p class="script-text">This isn’t just about moving data, it’s about <strong>improving it.</strong> Cleaning things up properly at this stage avoids issues later and ensures everything going into the new system is reliable.</p>
+        <span class="slide-number">Slide 9: Phase 4 (Migration & Cleansing)</span>
+        <p class="script-text">This isn’t just about moving data, it’s about <strong>improving it.</strong> We move from 'Legacy Scrubs' to a clean 'Historical Migration'.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> Cleansing during migration prevents us from inheriting past mistakes, ensuring the new Akeneo system starts with total 'Go-Live Validation'.</p>
     </div>
 
     <!-- Slide 10 -->
     <div class="cue-card">
-        <span class="slide-number">Slide 10: Phase 5 (Launch)</span>
-        <p class="script-text">This phase is about making sure your teams are set up to <strong>run things confidently</strong> day to day. Clear guides, proper training, and support so everything lands safely.</p>
+        <span class="slide-number">Slide 10: Phase 5 (Launch & Autonomy)</span>
+        <p class="script-text">This phase is about making sure your teams are set up to <strong>run things confidently.</strong> Clear 'Process Playbooks' and managed onboarding.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Talking Point:</em> Adoption is everything. We move from training to full post-launch support. I will champion their onboarding.</p>
     </div>
 
     <!-- Slide 11 -->
     <div class="cue-card">
         <span class="slide-number">Slide 11: Real-Time Dashboard</span>
         <div class="action-cue">👉 Mention the 3 live Linear links</div>
-        <p class="script-text"><strong>Total Operational Transparency:</strong> I maintain an auditable execution log to ensure continuous visibility into strategic milestones, sprint velocity, and risk mitigation.</p>
+        <p class="script-text"><strong>Total Operational Transparency:</strong> I maintain an auditable execution log so you never have to guess where we are in the project.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> You can click those links right now to see the exact tickets. Complete visibility builds trust.</p>
     </div>
 
-    <!-- Slide 12 -->
     <div class="cue-card">
         <span class="slide-number">Slide 12: Projected ROI</span>
-        <p class="script-text">Max, Polly—a solid PIM foundation doesn't just manage data. <strong>It accelerates every single department in the business.</strong></p>
+        <p class="script-text">Max, Polly—a solid foundation doesn't just manage data. <strong>It accelerates every single department in the business.</strong></p>
+        <div style="font-size: 0.9rem; color: #AAA; margin-top: 15px; border-top: 1px solid #333; pt: 10px;">
+            <p><strong>80% Time Saving:</strong> Based on industry benchmarks for eliminating 'Triple-Keying' between NetSuite, Spreadsheets, and Shopify.</p>
+            <p><strong>2x Launch Speed:</strong> Moving from linear workflows to parallel enrichment in the PIM reduces 'Time-to-Market' by 50%.</p>
+            <p><strong>100% Accuracy:</strong> This is a system constraint. Phase 2 validation rules physically prevent incomplete or incorrect data from publishing to Shopify.</p>
+        </div>
     </div>
 
     <!-- Slide 13 -->
     <div class="cue-card">
         <span class="slide-number">Slide 13: Phase 2 Vision</span>
         <p class="script-text">Phase 1 fixes the tech. Max, <strong>Phase 2 is where we scale the relationship.</strong></p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Depth:</em> Using CRM synergy, we move from just managing product properties to tailoring the exact product experience to the right customer.</p>
     </div>
 
     <!-- Slide 14 -->
@@ -161,6 +191,7 @@
         <span class="slide-number">Slide 14: Conclusion</span>
         <div class="action-cue">👉 Smile and finish strong</div>
         <p class="script-text">My goal is simple: ensure the technology works, the process is perfectly clean, and <strong>Dusk is set up to grow.</strong> Thank you.</p>
+        <p style="font-size: 1rem; color: #AAA; margin-top: 15px;"><em>Final Point:</em> Emphasize that you are ready to hit the ground running on day one.</p>
     </div>
 
     <div style="height: 50vh;"></div> <!-- Extra scrolling space at bottom -->

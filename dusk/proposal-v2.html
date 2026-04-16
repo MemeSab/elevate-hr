@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saba Haroon | Akeneo PIM Proposal for Dusk</title>
+
+    <!-- Security Gate -->
+    <script>
+        (function() {
+            const pass = "2026";
+            if (sessionStorage.getItem("dusk_auth") !== "true") {
+                const input = prompt("Please enter the 4-digit access code:");
+                if (input === pass) {
+                    sessionStorage.setItem("dusk_auth", "true");
+                } else {
+                    document.documentElement.innerHTML = "Access Denied.";
+                    window.location.href = "https://www.google.com";
+                }
+            }
+        })();
+    </script>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -28,7 +44,7 @@
         .slide { 
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
             display: none; padding: 60px 80px; background: var(--dusk-bg);
-            flex-direction: column; justify-content: center;
+            flex-direction: column; justify-content: center; overflow-y: auto;
         }
         .slide.active { display: flex; }
         .slide-top { justify-content: flex-start !important; padding-top: 60px !important; }
@@ -49,7 +65,7 @@
         .accent-bar { width: 100%; height: 8px; background: var(--dusk-maroon); position: absolute; top: 0; left: 0; }
         
         .mermaid { background: white; padding: 30px; border-radius: 4px; border: 1px solid #EEE; text-align: center; margin-top: 20px; cursor: pointer; }
-        .mermaid-scaled svg { max-height: 40vh; width: auto; }
+        .mermaid-scaled svg { max-height: 55vh; width: auto; }
         .conversational-note { margin-top: 20px; padding: 15px; border-top: 1px solid #EEE; font-style: italic; color: #666; font-size: 0.95rem; }
 
         /* Legend Card */
@@ -134,7 +150,7 @@
 
         <!-- 2. The Transformation -->
         <div class="slide">
-            <span class="kicker">Phase 1 Business Case</span>
+            <span class="kicker">Business Case</span>
             <h2>From Messy Data to Sustainable Growth</h2>
             <div class="grid-2">
                 <div class="card">
@@ -156,7 +172,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="conversational-note">Dusk is a premium brand. Your product information infrastructure should be just as seamless as your customer experience.</p>
+            <p class="conversational-note">Dusk delivers 'Luxury for Less'. Your product information infrastructure should be just as seamless as your customer experience.</p>
         </div>
 
         <!-- 3. Current State Diagram -->
@@ -243,22 +259,34 @@
             
             <div id="zapier-modal">
                 <i class="fas fa-times close-btn" onclick="toggleZapier(event)"></i>
-                <span class="kicker">Strategic Insight</span>
-                <h4>The Akeneo + Zapier Synergy</h4>
-                <ul class="space-y-6">
-                    <li style="margin-bottom: 20px;">
-                        <strong style="color: var(--dusk-maroon);">🛡️ The Tactical Bridge:</strong> 
-                        <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">While Akeneo holds your "Golden Record," Zapier acts as the agile delivery layer that pushes that data to Shopify and NetSuite without expensive custom dev.</p>
-                    </li>
-                    <li style="margin-bottom: 20px;">
-                        <strong style="color: var(--dusk-maroon);">⚡ No-Code Agility:</strong> 
-                        <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Allows the Dusk team to connect new marketing or ops tools in minutes, ensuring data is consistent across every new touchpoint.</p>
-                    </li>
-                    <li>
-                        <strong style="color: var(--dusk-maroon);">📈 Phased Scalability (Phase 1.5):</strong> 
-                        <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Can be implemented as part of Phase 1 automation or as a follow-up 'Phase 1.5' to scale more complex inventory and return workflows later.</p>
-                    </li>
-                </ul>
+                <span class="kicker">Strategic Perspective</span>
+                <h4>Agile Middleware Strategy</h4>
+                
+                <div style="margin-top: 30px; display: grid; gap: 20px;">
+                    <div style="display: flex; gap: 15px;">
+                        <span style="font-size: 1.5rem;">⚙️</span>
+                        <div>
+                            <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Strategic Discovery</strong>
+                            <p style="font-size: 0.85rem; color: #666; margin: 0; line-height: 1.5;">While we finalise the exact middleware in Phase 1, I recommend Zapier based on its track record of rapid deployment and reliability.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px;">
+                        <span style="font-size: 1.5rem;">⚡</span>
+                        <div>
+                            <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Low-Code Advantage</strong>
+                            <p style="font-size: 0.85rem; color: #666; margin: 0; line-height: 1.5;">It provides a powerful alternative to custom-built plugins, allowing us to automate complex data flows without heavy engineering costs.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px;">
+                        <span style="font-size: 1.5rem;">🎯</span>
+                        <div>
+                            <strong style="color: var(--dusk-maroon); display: block; margin-bottom: 4px;">Beyond Webhooks</strong>
+                            <p style="font-size: 0.85rem; color: #666; margin: 0; line-height: 1.5;">Zapier offers the flexibility to map multi-step logic and connect future tools (like CRM or WMS) as Dusk evolves.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-overlay" id="modal-overlay" onclick="toggleZapier()"></div>
 
@@ -266,7 +294,7 @@
                 <strong>Connected Ecosystem:</strong> The solid area represents an automated data flow where PIM act as the orchestrator for all connected systems.
             </div>
 
-            <p class="conversational-note">Create once, deliver everywhere, with total confidence.</p>
+            <p class="conversational-note" style="line-height: 1.5;">Create once, deliver everywhere, with total confidence.<br><span style="font-size: 0.85rem; color: #888;">NetSuite remains the master source for Operations. Akeneo becomes the master source for Experience.</span></p>
         </div>
 
         <!-- 5. Strategy -->
@@ -314,17 +342,17 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="step-pill">1.1</span>
-                    <h4 style="margin-top: 15px;">Systems Audit</h4>
+                    <h4 style="margin-top: 15px;">Tech Stack Review</h4>
                     <p style="font-size: 0.85rem;">Full audit of NetSuite, Shopify, and local spreadsheet master files to expose hidden inconsistencies.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">1.2</span>
-                    <h4 style="margin-top: 15px;">Gap Analysis</h4>
+                    <h4 style="margin-top: 15px;">Data Health Check</h4>
                     <p style="font-size: 0.85rem;">Identifying data gaps, broken labels, and missing attributes across the current ecosystem.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">1.3</span>
-                    <h4 style="margin-top: 15px;">Data Mapping</h4>
+                    <h4 style="margin-top: 15px;">Data Flow Mapping</h4>
                     <p style="font-size: 0.85rem;">Creating the technical blueprint for the final, automated "Golden Record" data flow.</p>
                 </div>
             </div>
@@ -341,17 +369,17 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="step-pill">2.1</span>
-                    <h4 style="margin-top: 15px;">Taxonomy</h4>
-                    <p style="font-size: 0.85rem;">Defining the attribute families and categories that fit Dusk's premium editorial standards.</p>
+                    <h4 style="margin-top: 15px;">Catalog Architecture</h4>
+                    <p style="font-size: 0.85rem;">Defining the attribute families and categories that fit Dusk's 'Luxury for Less' editorial standards.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">2.2</span>
-                    <h4 style="margin-top: 15px;">Role Logic</h4>
+                    <h4 style="margin-top: 15px;">Team Permissions</h4>
                     <p style="font-size: 0.85rem;">Designing user access levels: who creates, who reviews, and who publishes the final data.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">2.3</span>
-                    <h4 style="margin-top: 15px;">Quality Checks</h4>
+                    <h4 style="margin-top: 15px;">Quality Rules</h4>
                     <p style="font-size: 0.85rem;">Setting the validation rules that guarantee 99% accuracy across every product channel.</p>
                 </div>
             </div>
@@ -368,17 +396,17 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="step-pill">3.1</span>
-                    <h4 style="margin-top: 15px;">ERP Sync</h4>
+                    <h4 style="margin-top: 15px;">NetSuite Integration</h4>
                     <p style="font-size: 0.85rem;">Setting up the automated, real-time sync between NetSuite (Oracle) and Akeneo PIM.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">3.2</span>
-                    <h4 style="margin-top: 15px;">Channel Distribution</h4>
+                    <h4 style="margin-top: 15px;">Shopify Integration</h4>
                     <p style="font-size: 0.85rem;">Building the 'Publishing' rules for Shopify to ensure product data is live in seconds.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">3.3</span>
-                    <h4 style="margin-top: 15px;">Data Integrity</h4>
+                    <h4 style="margin-top: 15px;">End-to-End Testing</h4>
                     <p style="font-size: 0.85rem;">Rigorous testing of automated flows to prevent data collisions or system overlaps.</p>
                 </div>
             </div>
@@ -395,17 +423,17 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="step-pill">4.1</span>
-                    <h4 style="margin-top: 15px;">Legacy Scrub</h4>
+                    <h4 style="margin-top: 15px;">Data Cleansing</h4>
                     <p style="font-size: 0.85rem;">Mass scrubbing of duplicates and broken characters from the current legacy files.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">4.2</span>
-                    <h4 style="margin-top: 15px;">Bulk Upload</h4>
+                    <h4 style="margin-top: 15px;">Historical Migration</h4>
                     <p style="font-size: 0.85rem;">Safe bulk migration into the Akeneo staging environment for final review.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">4.3</span>
-                    <h4 style="margin-top: 15px;">Verification</h4>
+                    <h4 style="margin-top: 15px;">Go-Live Validation</h4>
                     <p style="font-size: 0.85rem;">Ensuring the data in Akeneo exactly matches the requirements of Shopify and ERP.</p>
                 </div>
             </div>
@@ -422,17 +450,17 @@
             <div class="grid-3">
                 <div class="card">
                     <span class="step-pill">5.1</span>
-                    <h4 style="margin-top: 15px;">SOP Manuals</h4>
+                    <h4 style="margin-top: 15px;">Process Playbooks</h4>
                     <p style="font-size: 0.85rem;">Visual 'how-to' guides for different departments to ensure total independence.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">5.2</span>
-                    <h4 style="margin-top: 15px;">Team Training</h4>
+                    <h4 style="margin-top: 15px;">Team Onboarding</h4>
                     <p style="font-size: 0.85rem;">Hands-on workshops with the actual tools to confirm team readiness.</p>
                 </div>
                 <div class="card">
                     <span class="step-pill">5.3</span>
-                    <h4 style="margin-top: 15px;">Hyper-Care</h4>
+                    <h4 style="margin-top: 15px;">Post-Launch Support</h4>
                     <p style="font-size: 0.85rem;">On-call support for the first 30 days post-launch to guarantee a smooth transition.</p>
                 </div>
             </div>
