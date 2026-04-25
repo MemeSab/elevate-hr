@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const successRef = document.getElementById('newsletter-success-box');
     const formContainer = document.getElementById('newsletter-form-container');
 
-    // 1. PERSISTENCE CHECK
+    // 1. PERSISTENCE CHECK (DISABLED FOR WORKSHOP AUDIT)
+    /*
     if (localStorage.getItem('elevate_newsletter_dismissed')) {
         return; // Already seen or subscribed
     }
+    */
 
     // 2. TRIGGER LOGIC
     // Show after 10 seconds OR 50% Scroll
@@ -24,8 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden'; // Prevent scroll
     };
 
-    // Time-based
-    const timer = setTimeout(showModal, 10000);
+    // Time-based (Sped up to 5s for Audit)
+    const timer = setTimeout(showModal, 5000);
 
     // Scroll-based
     window.addEventListener('scroll', function scrollHandler() {
