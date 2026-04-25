@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent OD | Brand System & UI Kit</title>
+    <link rel="stylesheet" href="css/brand-system.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">INTELLIGENT OD</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#colors" class="nav-link">Colors</a></li>
+                <li><a href="#typography" class="nav-link">Typography</a></li>
+                <li><a href="#components" class="nav-link">Components</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn btn-primary">Download UI Kit</a>
+    </header>
+
+    <main class="container">
+        
+        <!-- 1. Brand Overview -->
+        <section id="overview" class="section">
+            <h1 class="serif">Brand Overview</h1>
+            <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div>
+                    <h3 class="serif">Tone & Personality</h3>
+                    <p class="body-large">The Intelligent OD brand is defined by its quiet authority. We are calm, intelligent, and structured. Our presence is felt through editorial precision and a premium aesthetic that avoids the typical startup clutter.</p>
+                </div>
+                <div>
+                    <h3 class="serif">Positioning</h3>
+                    <p class="body-large">A strategic consultancy for the world's most sophisticated leadership teams. We deliver organizational development insights through a lens of psychological depth and clinical structure.</p>
+                </div>
+            </div>
+            
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); margin-top: var(--space-l);">
+                <div class="principle-box">
+                    <h4 class="serif">Simplicity</h4>
+                    <p class="small">We remove the unnecessary to reveal the essential.</p>
+                </div>
+                <div class="principle-box">
+                    <h4 class="serif">Clarity</h4>
+                    <p class="small">Every interaction must provide a sense of order.</p>
+                </div>
+                <div class="principle-box">
+                    <h4 class="serif">Consistency</h4>
+                    <p class="small">A rigorous adherence to our systemic rules.</p>
+                </div>
+                <div class="principle-box">
+                    <h4 class="serif">Restraint</h4>
+                    <p class="small">Power held in check through minimal design.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Colour System -->
+        <section id="colors" class="section">
+            <h2 class="serif">Colour System</h2>
+            <p class="body-large" style="margin-bottom: var(--space-m);">Our palette is rooted in deep structural tones with a single, sharp accent of gold.</p>
+            
+            <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="swatch" style="background-color: var(--navy);">
+                    <strong>Navy (#0B1C2C)</strong>
+                    <span>Primary Color</span>
+                </div>
+                <div class="swatch" style="background-color: var(--charcoal);">
+                    <strong>Charcoal (#1F1F1F)</strong>
+                    <span>Secondary / Text</span>
+                </div>
+                <div class="swatch" style="background-color: var(--white); color: var(--navy); border: 1px solid #eee;">
+                    <strong>White (#F7F5F2)</strong>
+                    <span>Base Background</span>
+                </div>
+                <div class="swatch" style="background-color: var(--slate);">
+                    <strong>Slate (#5A6B7A)</strong>
+                    <span>Muted Text / UI</span>
+                </div>
+                <div class="swatch" style="background-color: var(--blue);">
+                    <strong>Blue (#7FAFD4)</strong>
+                    <span>Interactive Element</span>
+                </div>
+                <div class="swatch" style="background-color: var(--gold);">
+                    <strong>Gold (#C8A96A)</strong>
+                    <span>Accent (Limited Use)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Typography -->
+        <section id="typography" class="section">
+            <h2 class="serif">Typography</h2>
+            <div class="grid" style="grid-template-columns: 1fr 2fr; align-items: start;">
+                <div>
+                    <h4 class="serif" style="font-size: 1rem; text-transform: uppercase; margin-bottom: var(--space-s);">Font Pairing</h4>
+                    <p style="font-family: 'Playfair Display', serif; font-size: 2rem;">Playfair Display</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 1.5rem; color: var(--slate);">Inter Sans-Serif</p>
+                </div>
+                <div style="background: white; padding: var(--space-m); border-radius: var(--radius); border: 1px solid #eee;">
+                    <h1 class="serif" style="margin-bottom: 8px;">Heading One</h1>
+                    <h2 class="serif" style="margin-bottom: 8px;">Heading Two</h2>
+                    <h3 class="serif" style="margin-bottom: 8px;">Heading Three</h3>
+                    <p class="body-large" style="margin-bottom: 16px;">Body Text: The quick brown fox jumps over the lazy dog. Highly readable and professional.</p>
+                    <p class="small">Small Text: Copyright 2026 Intelligent OD. All rights reserved.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. UI Components -->
+        <section id="components" class="section">
+            <h2 class="serif">UI Component Library</h2>
+            
+            <!-- Buttons -->
+            <div style="margin-bottom: var(--space-l);">
+                <h4 class="serif" style="margin-bottom: var(--space-s);">Buttons</h4>
+                <div class="grid" style="grid-template-columns: repeat(4, 1fr);">
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <span class="small">Primary</span>
+                        <button class="btn btn-primary">Request Access</button>
+                        <button class="btn btn-primary" style="opacity: 0.8;">Hover State</button>
+                        <button class="btn btn-primary" disabled>Disabled State</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <span class="small">Secondary</span>
+                        <button class="btn btn-secondary">Learn More</button>
+                        <button class="btn btn-secondary" style="opacity: 0.7;">Hover State</button>
+                        <button class="btn btn-secondary" disabled>Disabled State</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <span class="small">Text</span>
+                        <button class="btn btn-text">View Insights</button>
+                        <button class="btn btn-text" style="color: var(--gold);">Hover State</button>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <span class="small">Pills</span>
+                        <span class="pill">Leadership</span>
+                        <span class="pill" style="background: var(--gold); color: white;">Premium</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forms -->
+            <div style="margin-bottom: var(--space-l);">
+                <h4 class="serif" style="margin-bottom: var(--space-s);">Form Elements</h4>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+                    <div>
+                        <div class="input-group">
+                            <label class="label">Full Name</label>
+                            <input type="text" class="input" placeholder="Enter your name">
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Email Address (Focused)</label>
+                            <input type="email" class="input" style="border-color: var(--blue);" value="info@intelligentod.com">
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Message (Error)</label>
+                            <input type="text" class="input error" placeholder="Required field">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-group">
+                            <label class="label">Checkboxes & Radios</label>
+                            <div style="display: flex; gap: var(--space-m); align-items: center; margin-bottom: 12px;">
+                                <input type="checkbox" checked id="check1" style="transform: scale(1.2);">
+                                <label for="check1" class="small">Accept Terms</label>
+                            </div>
+                            <div style="display: flex; gap: var(--space-m); align-items: center;">
+                                <input type="radio" name="r1" checked id="radio1" style="transform: scale(1.2);">
+                                <label for="radio1" class="small">Individual</label>
+                                <input type="radio" name="r1" id="radio2" style="transform: scale(1.2);">
+                                <label for="radio2" class="small">Corporate</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label class="label">Textarea</label>
+                            <textarea class="textarea" rows="4" placeholder="How can we help?"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div>
+                <h4 class="serif" style="margin-bottom: var(--space-s);">Cards</h4>
+                <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                    
+                    <!-- Content Card -->
+                    <div class="card">
+                        <span class="pill" style="margin-bottom: 12px;">Methodology</span>
+                        <h3 class="serif">The Structural Framework</h3>
+                        <p class="small">Our approach to organizational diagnostics involves a multi-layered analysis of systemic behavior.</p>
+                        <a href="#" class="btn btn-text" style="padding-top: 16px;">Read More</a>
+                    </div>
+
+                    <!-- Insight Card -->
+                    <div class="insight-card">
+                        <img src="images/brand/insight.png" alt="Boardroom">
+                        <div class="overlay">
+                            <span class="pill" style="background: var(--gold); color: white; margin-bottom: 8px;">Exclusive Insight</span>
+                            <h3 class="serif">Leadership in Flux</h3>
+                            <button class="btn btn-primary" style="padding: 8px 16px;">Access Course</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card -->
+                    <div class="card" style="text-align: center;">
+                        <img src="images/brand/profile.png" alt="Kash Haroon" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 3px solid var(--white);">
+                        <h3 class="serif">Kash Haroon</h3>
+                        <p class="small" style="font-weight: 600; color: var(--navy);">Founder & Principal Consultant</p>
+                        <p class="small" style="margin-top: 8px;">20+ years of organizational transformation experience across global sectors.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="background: var(--navy); color: white; padding: var(--space-xl) 0; text-align: center; margin-top: var(--space-xl);">
+        <div class="logo" style="color: white; margin-bottom: var(--space-s);">INTELLIGENT OD</div>
+        <p class="small" style="color: var(--slate); border-top: 1px solid rgba(255,255,255,0.1); display: inline-block; padding-top: var(--space-s);">DESIGN SYSTEM V1.0 &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

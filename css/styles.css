@@ -152,6 +152,17 @@ ul {
   width: 100%;
 }
 
+.login-link {
+  font-size: 0.85rem !important;
+  color: var(--accent-cyan) !important;
+  font-weight: 600 !important;
+  margin-left: 1rem;
+}
+
+.login-link::after {
+  display: none !important; /* No underline for secondary links */
+}
+
 .btn-primary {
   background-color: var(--primary-accent);
   color: #fff;

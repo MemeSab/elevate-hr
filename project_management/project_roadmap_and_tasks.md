@@ -121,3 +121,83 @@ This document breaks down the active and upcoming phases of the Elevate (Intelli
   - [x] **Verified:** Mobile navigation uses an off-canvas drawer with no overflow issues.
   - [x] **Verified:** Login branding is crisp and visible (Dark logo on white background).
   - [x] **Verified:** All social login buttons have high contrast (Google/LinkedIn text is visible).
+
+### **Task 3.8: Intelligent OD Brand System & UI Kit (ELE-20)**
+* **Description:** Create a complete brand system and UI component library for a premium leadership consultancy.
+* **Actions:**
+  1. Define strict color palette (Navy, Charcoal, White, Slate, Blue, Gold).
+  2. Implement typography scale (Playfair Display / Inter).
+  3. Build comprehensive UI showcase in `brand-system.html`.
+* **Testing Requirements:**
+  - [x] **Verified:** `brand-system.html` renders all components with 100% brand fidelity.
+  - [x] **Verified:** CSS variables are centrally managed and scalable.
+
+### **Task 3.9: Dusk Akeneo PIM Strategic Roadmap (ELE-21)**
+* **Description:** Build a professional Reveal.js presentation for the Dusk Akeneo PIM implementation.
+* **Actions:**
+  1. Create a 10-slide, dark-mode presentation.
+  2. Implement granular 5-phase breakdown with human-centric strategic insights.
+  3. Integrate live Linear governance document links.
+* **Testing Requirements:**
+  - [x] **Verified:** Presentation reframed for "Dusk" stakeholders with simplified language.
+  - [x] **Verified:** KPI slide includes -70% manual work and -40% launch time metrics.
+
+---
+
+## **Dusk Project: Akeneo PIM Implementation (Milestone Planning)**
+*Strategy Note:* This project is structured into **5 Linear Milestones** to provide total visibility into delivery progress. Each milestone represents a critical logic gate that must be validated before moving to the next stage.
+
+### **Milestone: Phase 1 – Audit & Discovery**
+*   **[1.1] Tech Stack Review ([ELE-23](https://linear.app/elevate-od/issue/ELE-23))**: 
+    - *Spec:* Full audit of NetSuite, Shopify, and local spreadsheet master files to expose hidden inconsistencies.
+    - *Test:* Confirm 'Price' and 'SKU' match across all audited platforms.
+*   **[1.2] Data Health Check**: 
+    - *Spec:* Identifying data gaps, broken labels, and missing attributes across the current ecosystem.
+    - *Test:* Generate health report showing 100% attribute alignment.
+*   **[1.3] Data Flow Mapping**: 
+    - *Spec:* Creating the technical blueprint for the final, automated "Golden Record" data flow.
+    - *Test:* Architectural sign-off on automated sync logic.
+
+### **Milestone: Phase 2 – Structural Design**
+*   **[2.1] Catalog Architecture ([ELE-26](https://linear.app/elevate-od/issue/ELE-26))**: 
+    - *Spec:* Defining the attribute families and categories that fit Dusk's 'Luxury for Less' editorial standards.
+    - *Test:* Successfully fetch Attribute lists via API sandbox.
+*   **[2.2] Team Permissions**: 
+    - *Spec:* Designing user access levels: who creates, who reviews, and who publishes the final data.
+    - *Test:* Role-based access control (RBAC) validation.
+*   **[2.3] Quality Rules**: 
+    - *Spec:* Setting the validation rules that guarantee 99% accuracy across every product channel.
+    - *Test:* Failed upload test for data missing mandatory attributes.
+
+### **Milestone: Phase 3 – Integration & Automation**
+*   **[3.1] NetSuite Integration**: 
+    - *Spec:* Setting up the automated, real-time sync between NetSuite (Oracle) and Akeneo PIM.
+    - *Test:* Bi-directional sync confirmed for core item master.
+*   **[3.2] Shopify Integration ([ELE-30](https://linear.app/elevate-od/issue/ELE-30))**: 
+    - *Spec:* Building the 'Publishing' rules for Shopify to ensure product data is live in seconds.
+    - *Test:* Run deduplication on a 100-record sample; verify 0 errors remain.
+*   **[3.3] End-to-End Testing**: 
+    - *Spec:* Rigorous testing of automated flows to prevent data collisions or system overlaps.
+    - *Test:* Full lifecycle test (ERP -> PIM -> Shopify) completed in < 60s.
+
+### **Milestone: Phase 4 – Migration & Cleansing**
+*   **[4.1] Data Cleansing**: 
+    - *Spec:* Mass scrubbing of duplicates and broken characters from the current legacy files.
+    - *Test:* 100% clean data import into staging environment.
+*   **[4.2] Historical Migration ([ELE-33](https://linear.app/elevate-od/issue/ELE-33))**: 
+    - *Spec:* Safe bulk migration into the Akeneo staging environment for final review.
+    - *Test:* Verify "New Item" appears in Shopify draft within 60s of creation.
+*   **[4.3] Go-Live Validation**: 
+    - *Spec:* Ensuring the data in Akeneo exactly matches the requirements of Shopify and ERP.
+    - *Test:* Final stakeholder sign-off on product data integrity.
+
+### **Milestone: Phase 5 – Launch & Autonomy**
+*   **[5.1] Process Playbooks**: 
+    - *Spec:* Visual 'how-to' guides for different departments to ensure total independence.
+    - *Test:* Successful completion of task by user relying solely on playbooks.
+*   **[5.2] Team Onboarding ([ELE-36](https://linear.app/elevate-od/issue/ELE-36))**: 
+    - *Spec:* Hands-on workshops with the actual tools to confirm team readiness.
+    - *Test:* Team leads confirmed competent in Akeneo administration.
+*   **[5.3] Post-Launch Support**: 
+    - *Spec:* On-call support for the first 30 days post-launch to guarantee a smooth transition.
+    - *Test:* SLA compliance check for triage and resolution.

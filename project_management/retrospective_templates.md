@@ -78,3 +78,23 @@ This document is used to track and review the outcome of every major task in the
     3. **Branding Sync**: Updated the "Log In / Register" navigation link to use the vibrant Sky Blue (`#38BDF8`) accent. This matches the "Home" active state and provides high-contrast visibility against dark hero backgrounds on load.
 * **Outcome:** The branding now programmatically transitions with 100% fidelity across all pages and initial render states. 
 * **Reference Issue:** [ELE-13](https://linear.app/elevate-od/issue/ELE-13)
+
+---
+
+## 📝 Retrospective: [ELE-20 - Intelligent OD Brand System & UI Kit]
+**Date Completed:** `2026-04-08`
+* **What was Planned:** Create a complete brand system and UI component library for a premium leadership consultancy.
+* **What was Done:** Defined a strict HSL color palette (Navy, Charcoal, White, Slate, Blue, Gold), implemented a typography scale with Playfair Display and Inter, and built a comprehensive UI showcase in `brand-system.html`.
+* **Reference Issue:** [ELE-20](https://linear.app/elevate-od/issue/ELE-20)
+
+---
+
+## 📝 Retrospective: [ELE-40 - Linear Strategic Structure & Milestone Mapping]
+**Date Completed:** `2026-04-08`
+* **What was Planned:** Remap the Akeneo project in Linear into clear planning milestones with sample "Deliverable Specifications" (Requirements/Test Scenarios).
+* **What was Done:** 
+    1. **Milestone Creation**: Established Phase 1-5 milestones to provide high-level progress tracking.
+    2. **Deep Specification**: Populated issues with granular requirements and actionable test scenarios (e.g. [ELE-23](https://linear.app/elevate-od/issue/ELE-23), [ELE-33](https://linear.app/elevate-od/issue/ELE-33)).
+    3. **Planning Fidelity**: Validated that every slide in the presentation has a corresponding, ready-to-execute task in the backlog.
+* **Outcome:** The project is no longer just a "roadmap"—it is a fully engineered delivery board that demonstrates "zero-handholding" project management.
+* **Reference Issue:** [ELE-40](https://linear.app/elevate-od/issue/ELE-40)

@@ -101,10 +101,10 @@
   width: 40vw;
   height: 70vh;
   max-width: 500px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.005) 100%);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(255, 255, 255, 0.005) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.15);
   border-radius: 40px;
   z-index: 3;
   pointer-events: none;
@@ -143,8 +143,8 @@
 }
 
 .hero .badge {
-  color: #FFFFFF !important;
-  border-color: #FFFFFF !important;
+  color: #38BDF8 !important;
+  border-color: #38BDF8 !important;
 }
 
 .hero-title {
@@ -178,8 +178,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #0D9488;
-  color: #FFFFFF;
+  background-color: #38BDF8;
+  color: #0B1220;
   padding: 16px 32px;
   border-radius: 50px;
   font-weight: 700;
@@ -188,12 +188,14 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .hero-btn-primary:hover {
-  background-color: #0F766E;
+  background-color: #0284c7;
   transform: translateY(-2px);
   color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
 }
 
 .hero-btn-secondary {
@@ -216,6 +218,76 @@
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
   color: #FFFFFF;
+}
+
+/* Section 1: Proof Strip */
+.proof-strip {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 5%;
+  z-index: 10;
+  position: relative;
+}
+
+.proof-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.proof-item {
+  flex: 1;
+  text-align: center;
+}
+
+.proof-desc {
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.proof-divider {
+  width: 1px;
+  height: 30px;
+  background: var(--border-color);
+}
+
+/* Section 2: Tension Copy */
+.tension-section {
+  background-color: var(--bg-surface);
+  text-align: center;
+  position: relative;
+}
+
+.tension-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-family: var(--heading-font);
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .proof-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .proof-divider {
+    width: 50px;
+    height: 1px;
+    margin: 0 auto;
+  }
+  .tension-text {
+    font-size: 1.4rem;
+  }
 }
 
 /* Make logo and nav links white initially, since hero is dark */
