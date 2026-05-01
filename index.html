@@ -20,6 +20,123 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/newsletter.css">
+    <style>
+        /* Emergency CSS Injection for Capability Matrix */
+        .capability-matrix {
+            background-color: #0B1220 !important;
+            color: #F8FAFC !important;
+            padding: 80px 5% !important;
+            position: relative;
+            z-index: 5;
+        }
+        .capability-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 32px !important;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .capability-card {
+            display: flex !important;
+            flex-direction: column !important;
+            padding: 40px !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 24px !important;
+            transition: transform 0.3s ease !important;
+        }
+        .capability-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: rgba(56, 189, 248, 0.3) !important;
+        }
+        .card-title {
+            font-size: 1.5rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 24px !important;
+            color: #FFFFFF !important;
+            line-height: 1.3 !important;
+        }
+        .capability-statements {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 16px !important;
+            margin-bottom: 32px !important;
+        }
+        .capability-statements p {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            color: #cbd5e1 !important;
+            margin: 0 !important;
+            padding-left: 20px !important;
+            position: relative !important;
+        }
+        .capability-statements p::before {
+            content: "—" !important;
+            position: absolute !important;
+            left: 0 !important;
+            color: #38BDF8 !important;
+        }
+        .capability-body {
+            font-size: 1.05rem !important;
+            line-height: 1.6 !important;
+            color: #e2e8f0 !important;
+            margin-bottom: 32px !important;
+        }
+        .capability-subsections {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+            margin-bottom: 32px !important;
+        }
+        .capability-subsections .sub-section strong {
+            display: block !important;
+            font-size: 1.1rem !important;
+            color: #38BDF8 !important;
+            margin-bottom: 8px !important;
+        }
+        .featured-resource {
+            background: rgba(56, 189, 248, 0.05) !important;
+            border-left: 4px solid #38BDF8 !important;
+            padding: 16px 20px !important;
+            border-radius: 0 8px 8px 0 !important;
+            margin-bottom: 32px !important;
+        }
+        .card-actions {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            margin-top: auto !important;
+        }
+        .sky-btn {
+            background-color: #38BDF8 !important;
+            color: #0B1220 !important;
+            padding: 14px 28px !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            text-align: center !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+        }
+        .sky-btn:hover {
+            background-color: #0284c7 !important;
+            color: #ffffff !important;
+            transform: translateY(-2px) !important;
+        }
+        .secondary-text {
+            font-size: 0.85rem !important;
+            color: #94a3b8 !important;
+            text-align: center !important;
+        }
+        @media (max-width: 768px) {
+            .capability-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="home-page">
@@ -88,6 +205,146 @@
                 <p class="tension-text" style="max-width: 720px; font-family: 'Inter', sans-serif;">
                     "The culture shifts back... That happens when the diagnosis is skipped."
                 </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Strategic Capability Cards -->
+        <section class="capability-matrix section-padding" id="capabilities">
+            <div class="container">
+                <div class="capability-grid">
+                    <!-- Card 1A: The Emerging Leader -->
+                    <div class="capability-card glass-card">
+                        <h3 class="card-title">You're new to leadership and finding your feet.</h3>
+                        <div class="capability-statements">
+                            <p>I'm new to this and I feel like an outsider looking in.</p>
+                            <p>I've worked here for years but still don't feel like I fully belong.</p>
+                            <p>I've been promoted but nobody prepared me for what this actually feels like.</p>
+                            <p>I keep saying yes because my standards won't let me do it badly. When does dedication become self-destruction?</p>
+                            <p>How do I manage upwards without it looking like I'm working around my manager?</p>
+                            <p>We say yes to everything because our mission demands it and that stretching has become our identity. How do I introduce focus without the organisation hearing it as a betrayal of our values?</p>
+                        </div>
+                        <p class="capability-body">The early years of leadership are rarely what they look like from the outside... Coaching with Kash Haroon gives you a private space to make sense of your experience.</p>
+                        <div class="card-actions">
+                            <a href="mailto:kharoon@gmail.com" class="hero-btn-primary sky-btn">Book a Free Chemistry Call</a>
+                            <span class="secondary-text">A 30-minute conversation. No obligation.</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 1B: The Established Leader -->
+                    <div class="capability-card glass-card">
+                        <h3 class="card-title">You lead people. And right now, something is harder than it should be.</h3>
+                        <div class="capability-statements">
+                            <p>My team has just been through a restructure and my manager is acting like it's business as usual. How do I name the grief in the room without looking like I'm the one who hasn't moved on?</p>
+                            <p>I keep saying yes because my standards won't let me do it badly. When does dedication become self-destruction?</p>
+                            <p>I've shifted from rescuer to leader but rescuing is what got me promoted. How do I change a pattern the whole team has come to rely on?</p>
+                            <p>My line manager dismisses my concerns and doesn't engage with what I bring. How do I manage upwards without it looking like I'm working around her?</p>
+                            <p>Leadership want me to create psychological safety. But the organisation consistently fails to act on what gets said. How do I keep inviting honesty when the system punishes it?</p>
+                            <p>During the most difficult change my team has experienced, senior leadership went quiet. How do I lead my people through loss when the leaders above me have gone missing?</p>
+                        </div>
+                        <p class="capability-body">These are the conversations that don't make it into a performance review... Working with Kash Haroon at this level means getting an honest picture of what is actually happening.</p>
+                        <div class="card-actions">
+                            <a href="mailto:kharoon@gmail.com" class="hero-btn-primary sky-btn">Book a Free Chemistry Call</a>
+                            <span class="secondary-text">A 30-minute conversation. No obligation.</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Build Capability -->
+                    <div class="capability-card glass-card">
+                        <h3 class="card-title">Build the capability your organisation actually needs.</h3>
+                        <div class="capability-subsections">
+                            <div class="sub-section">
+                                <strong>Navigate and lead change:</strong>
+                                <p>Leaders who hold their nerve in uncertainty...</p>
+                            </div>
+                            <div class="sub-section">
+                                <strong>Develop a coaching culture:</strong>
+                                <p>Managers who approach every conversation with curiosity rather than judgement.</p>
+                            </div>
+                            <div class="sub-section">
+                                <strong>Lead inclusively and anti-racistly:</strong>
+                                <p>Leaders who understand their own positionality.</p>
+                            </div>
+                        </div>
+                        <div class="card-actions" style="margin-top: auto;">
+                            <a href="#contact" class="hero-btn-primary sky-btn">Discuss Organisational Programmes</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Practitioner Resource Hub -->
+                    <div class="capability-card glass-card">
+                        <h3 class="card-title">Looking for the right tool for the problem in front of you?</h3>
+                        <p class="capability-body">The Intelligent OD resource library brings together twenty years of practitioner-tested tools designed for real-world complexity.</p>
+                        <div class="featured-resource">
+                            <strong>Featured: AI-augmented tools</strong>
+                            <p>Not AI replacing practice. AI extending it.</p>
+                        </div>
+                        <div class="card-actions" style="margin-top: auto;">
+                            <a href="courses.html" class="hero-btn-primary sky-btn">Explore Resource Hub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Case Studies -->
+        <section class="case-studies section-padding" id="case-studies">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Impact in Practice</h2>
+                    <p>Real-world interventions that moved the needle for major organisations.</p>
+                </div>
+                <div class="case-grid">
+                    <!-- Case 1: Cornwall Council -->
+                    <div class="case-card glass-card">
+                        <div class="case-tag">Local Authority</div>
+                        <h3>Cornwall Council</h3>
+                        <p>A complex local authority. A culture that needed more than a workshop. We ran a diagnostic-first OD capacity programme that gave Cornwall's leaders the tools, language, and confidence to drive change from the inside. The impact was independently evaluated.</p>
+                    </div>
+                    <!-- Case 2: NW ADASS -->
+                    <div class="case-card glass-card">
+                        <div class="case-tag">Public Sector</div>
+                        <h3>NW ADASS Antiracism Programme</h3>
+                        <p>Anti-racist leadership isn't a training day. It's a sustained shift in how power, accountability, and practice work across a system. This locality-based programme reached leaders across Bolton, Trafford, Oldham, Sefton, and beyond — moving the conversation from awareness into action.</p>
+                    </div>
+                    <!-- Case 3: Tower Hamlets -->
+                    <div class="case-card glass-card">
+                        <div class="case-tag">Frontline Delivery</div>
+                        <h3>Tower Hamlets</h3>
+                        <p>Frontline practitioners who coach well change the culture around them. This programme built coaching capability at the point of delivery — giving people the skills and confidence to have the conversations that matter, every day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Our Approach -->
+        <section class="methodology section-padding" id="approach">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Work</h2>
+                    <p>A rigorous, evidence-based methodology that justifies the diagnostic-first premium.</p>
+                </div>
+                <div class="method-grid">
+                    <div class="method-step">
+                        <div class="step-number">01</div>
+                        <h3>Diagnose</h3>
+                        <p>We conduct comprehensive assessments to identify root causes and understand your organisational culture in depth.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">02</div>
+                        <h3>Decide</h3>
+                        <p>Working collaboratively, we use evidence and insight to make informed decisions and validate strategies with you.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">03</div>
+                        <h3>Implement</h3>
+                        <p>We design and deliver tailored interventions that align with your objectives and create the conditions for lasting change.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">04</div>
+                        <h3>Impact</h3>
+                        <p>We measure what matters. Outcomes, not activity. Evidence you can point to.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -177,50 +434,6 @@
             </div>
         </section>
 
-        <!-- Framework Section -->
-        <section class="services section-padding" id="framework">
-            <div class="section-header">
-                <h2>Four-Step Framework</h2>
-                <p>We understand that every organisation faces unique challenges in today's rapidly evolving landscape.
-                </p>
-            </div>
-            <div class="container" style="max-width: 1200px; margin: 0 auto;">
-                <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 3rem;">Our
-                    expertise spans various sectors, including local government, healthcare, education, and private
-                    enterprise. We specialise in leadership development, succession planning, cultural transformation,
-                    and building high-performing teams.</p>
-                <div class="services-bento" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                    <div class="card glass text-center">
-                        <span class="category"
-                            style="font-size: 1.5rem; font-weight: bold;">1</span>
-                        <h3 style="margin: 1rem 0;">DIAGNOSE</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">We conduct comprehensive assessments
-                            to identify root causes and understand your organisational culture in depth.</p>
-                    </div>
-                    <div class="card glass text-center">
-                        <span class="category"
-                            style="font-size: 1.5rem; font-weight: bold;">2</span>
-                        <h3 style="margin: 1rem 0;">DECIDE</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Working collaboratively, we use
-                            data-driven insights to make informed decisions and validate strategies.</p>
-                    </div>
-                    <div class="card glass text-center">
-                        <span class="category"
-                            style="font-size: 1.5rem; font-weight: bold;">3</span>
-                        <h3 style="margin: 1rem 0;">IMPLEMENT</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">We execute tailored solutions that
-                            align with your objectives and create lasting change.</p>
-                    </div>
-                    <div class="card glass text-center">
-                        <span class="category"
-                            style="font-size: 1.5rem; font-weight: bold;">4</span>
-                        <h3 style="margin: 1rem 0;">IMPACT</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem;">Through careful measurement and
-                            evaluation, we ensure meaningful outcomes and continuous improvement.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Insights & Articles Section -->
         <section class="insights section-padding" id="insights">
@@ -333,6 +546,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Closing CTA -->
+        <section class="closing-cta section-padding" style="background-color: #0F172A; border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container text-center">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: #FFFFFF;">You don't need a polished brief.</h2>
+                <p style="font-size: 1.2rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem;">If you know things need to change, but you're not sure where to start, let's have a conversation.</p>
+                <a href="#contact" class="hero-btn-primary sky-btn" style="padding: 18px 40px; font-size: 1.1rem;">Get in touch &rarr;</a>
             </div>
         </section>
 

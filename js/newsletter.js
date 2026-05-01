@@ -12,34 +12,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const successRef = document.getElementById('newsletter-success-box');
     const formContainer = document.getElementById('newsletter-form-container');
 
-    // 1. PERSISTENCE CHECK (DISABLED FOR WORKSHOP AUDIT)
-    /*
+    // 1. PERSISTENCE CHECK
     if (localStorage.getItem('elevate_newsletter_dismissed')) {
         return; // Already seen or subscribed
     }
-    */
 
     // 2. TRIGGER LOGIC
-    // Show after 10 seconds OR 50% Scroll
+    let isShown = false;
+
     const showModal = () => {
+        if (isShown || localStorage.getItem('elevate_newsletter_dismissed')) return;
+        isShown = true;
+        
+        // Clear all triggers
+        clearTimeout(timer);
+        window.removeEventListener('scroll', scrollHandler);
+        
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scroll
     };
 
-    // Time-based (Sped up to 5s for Audit)
+    // Time-based (5s)
     const timer = setTimeout(showModal, 5000);
 
     // Scroll-based
-    window.addEventListener('scroll', function scrollHandler() {
+    function scrollHandler() {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (window.scrollY / scrollHeight) * 100;
         
         if (scrollPercent > 50) {
             showModal();
-            clearTimeout(timer);
-            window.removeEventListener('scroll', scrollHandler);
         }
-    }, { passive: true });
+    }
+
+    window.addEventListener('scroll', scrollHandler, { passive: true });
 
     // 3. CLOSE LOGIC
     closeBtn.addEventListener('click', () => {
@@ -54,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
         localStorage.setItem('elevate_newsletter_dismissed', 'true');
+        
+        // Ensure everything is cleared if user closes it before triggers fire (rare but good practice)
+        clearTimeout(timer);
+        window.removeEventListener('scroll', scrollHandler);
     };
 
     // 4. FIRESTORE SUBMISSION
