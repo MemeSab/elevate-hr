@@ -438,6 +438,14 @@
   background-color: #0F172A; /* Slightly lighter navy for contrast */
 }
 
+.case-studies .section-header h2 {
+  color: #ffffff;
+}
+
+.case-studies .section-header p {
+  color: #cbd5e1;
+}
+
 .case-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -485,6 +493,14 @@
 /* Section 6: Methodology (ELE-19) */
 .methodology {
   background-color: #0B1220;
+}
+
+.methodology .section-header h2 {
+  color: #ffffff;
+}
+
+.methodology .section-header p {
+  color: #cbd5e1;
 }
 
 .method-grid {
