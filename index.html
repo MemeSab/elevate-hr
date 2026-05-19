@@ -182,135 +182,182 @@
             </div>
         </section>
 
-        <!-- Section 1: Proof Strip -->
-        <section class="proof-strip">
-            <div class="proof-container">
-                <div class="proof-item">
-                    <span class="proof-desc">20+ Years of Practice</span>
+        <!-- Section 1 & 2: Centered Proof Metrics & Tension Statement -->
+        <section class="tension-section section-padding" style="background-color: #0B1220; position: relative; overflow: hidden; padding: 6rem 0;">
+            <!-- Subtle background glow -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, rgba(11, 18, 32, 0) 70%); pointer-events: none;"></div>
+            
+            <div class="container" style="position: relative; z-index: 2; max-width: 850px; text-align: center; margin: 0 auto; padding: 0 1.5rem;">
+                
+                <!-- Proof Metrics Tabs -->
+                <div class="metrics-tab-strip">
+                    <div class="metric-tab-item">20+ Years of Practice</div>
+                    <div class="metric-tab-item">Public Sector Delivery</div>
+                    <div class="metric-tab-item">Evaluated Impact</div>
                 </div>
-                <div class="proof-divider"></div>
-                <div class="proof-item">
-                    <span class="proof-desc">Public Sector Delivery Across England</span>
-                </div>
-                <div class="proof-divider"></div>
-                <div class="proof-item">
-                    <span class="proof-desc">Independently Evaluated Impact</span>
+
+                <!-- Centered Narrative -->
+                <div class="narrative-centered">
+                    <h2 class="centered-lead">
+                        Most change programmes are well-intentioned. They arrive with energy, generate activity, and then <span class="fade-text">quietly fade</span>.
+                    </h2>
+                    
+                    <p class="centered-context">
+                        The culture shifts back. The behaviours return. The investment is difficult to justify.
+                    </p>
+
+                    <div class="centered-pivot">
+                        <span class="pivot-badge">The Root Cause</span>
+                        <h3 class="pivot-headline">That happens when the diagnosis is skipped.</h3>
+                    </div>
+
+                    <p class="centered-body">
+                        Not because organisations don't care, but because naming what is really happening is uncomfortable, and most consultants avoid discomfort.
+                    </p>
+                    
+                    <div class="centered-conclusion">
+                        We don't. <span class="accent-cyan">We start there.</span>
+                    </div>
                 </div>
             </div>
+            
+            <style>
+                /* Proof Metrics Tabs Strip */
+                .metrics-tab-strip {
+                    display: inline-flex;
+                    background: rgba(255, 255, 255, 0.02);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 100px;
+                    padding: 0.35rem;
+                    margin-bottom: 2.5rem;
+                    gap: 0.25rem;
+                }
+                .metric-tab-item {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    color: #94a3b8;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    padding: 0.75rem 1.75rem;
+                    border-radius: 100px;
+                    background: transparent;
+                    transition: all 0.3s ease;
+                    border: 1px solid transparent;
+                }
+                .metric-tab-item:hover {
+                    background: rgba(56, 189, 248, 0.08);
+                    border-color: rgba(56, 189, 248, 0.25);
+                    color: #38BDF8;
+                }
+
+                /* Centered Narrative Layout */
+                .narrative-centered {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                .centered-lead {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 2.3rem;
+                    color: #ffffff;
+                    line-height: 1.4;
+                    font-weight: 300;
+                    letter-spacing: -0.5px;
+                    margin: 0 0 1rem 0;
+                }
+                .centered-lead .fade-text {
+                    color: #64748b;
+                    font-style: italic;
+                }
+                .centered-context {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1.15rem;
+                    line-height: 1.8;
+                    color: #94a3b8;
+                    margin: 0 0 2.2rem 0;
+                    max-width: 650px;
+                }
+                
+                .centered-pivot {
+                    margin-bottom: 1.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem;
+                }
+                .pivot-badge {
+                    display: inline-block;
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 0.75rem;
+                    text-transform: uppercase;
+                    color: #38BDF8;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                }
+                .pivot-headline {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 1.75rem;
+                    color: #ffffff;
+                    font-weight: 400;
+                    line-height: 1.35;
+                    margin: 0;
+                    letter-spacing: -0.3px;
+                }
+                
+                .centered-body {
+                    font-family: 'Inter', sans-serif;
+                    font-size: 1.15rem;
+                    line-height: 1.8;
+                    color: #cbd5e1;
+                    margin: 0 0 2rem 0;
+                    max-width: 680px;
+                }
+                .centered-conclusion {
+                    font-family: 'Outfit', sans-serif;
+                    font-size: 2.2rem;
+                    color: #ffffff;
+                    font-weight: 400;
+                    letter-spacing: -0.5px;
+                }
+                .centered-conclusion .accent-cyan {
+                    color: #38BDF8;
+                    font-weight: 500;
+                }
+
+                @media (max-width: 768px) {
+                    .metrics-tab-strip {
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 20px;
+                        width: 100%;
+                        padding: 0.5rem;
+                        margin-bottom: 3rem;
+                    }
+                    .metric-tab-item {
+                        border-radius: 12px;
+                        padding: 0.85rem 1rem;
+                        font-size: 0.8rem;
+                    }
+                    .centered-lead {
+                        font-size: 1.85rem;
+                    }
+                    .pivot-headline {
+                        font-size: 1.5rem;
+                    }
+                    .centered-conclusion {
+                        font-size: 1.8rem;
+                    }
+                }
+            </style>
         </section>
 
-        <!-- Section 2: Tension Copy -->
-        <section class="tension-section section-padding" style="background-color: var(--surface-light, #f8fafc); text-align: center;">
-            <div class="container" style="max-width: 720px; margin: 0 auto;">
-                <p class="tension-text" style="font-family: 'Inter', sans-serif; font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1.5rem;">
-                    Most change programmes are well-intentioned. They arrive with energy, generate activity, and then quietly fade. The culture shifts back. The behaviours return. The investment is difficult to justify.
-                </p>
-                <p class="tension-text" style="font-family: 'Inter', sans-serif; font-size: 1.25rem; color: var(--text-primary); margin-bottom: 1.5rem; font-weight: 600;">
-                    That happens when the diagnosis is skipped.
-                </p>
-                <p class="tension-text" style="font-family: 'Inter', sans-serif; font-size: 1.25rem; color: var(--text-primary);">
-                    Not because organisations don't care, but because naming what is really happening is uncomfortable, and most consultants avoid discomfort. We don't. We start there.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section 3: Strategic Capability Cards -->
-        <section class="capability-matrix section-padding" id="capabilities">
-            <div class="container">
-                <div class="capability-grid">
-                    <!-- CARD 1A — THE EMERGING LEADER -->
-                    <div class="capability-card glass-card">
-                        <h3 class="card-title">You're new to leadership and finding your feet.</h3>
-                        <div class="capability-statements" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.5;">
-                            <p style="margin-bottom: 0.5rem;">I'm new to this and I feel like an outsider looking in.</p>
-                            <p style="margin-bottom: 0.5rem;">I've worked here for years but still don't feel like I fully belong.</p>
-                            <p style="margin-bottom: 0.5rem;">I've been promoted but nobody prepared me for what this actually feels like.</p>
-                            <p style="margin-bottom: 0.5rem;">I keep saying yes because my standards won't let me do it badly. When does dedication become self-destruction?</p>
-                            <p style="margin-bottom: 0.5rem;">How do I manage upwards without it looking like I'm working around my manager?</p>
-                            <p style="margin-bottom: 1rem;">We say yes to everything because our mission demands it and that stretching has become our identity. How do I introduce focus without the organisation hearing it as a betrayal of our values?</p>
-                        </div>
-                        <p class="capability-body" style="margin-bottom: 1rem;">The early years of leadership are rarely what they look like from the outside. The confidence gap between how others see you and how you experience yourself from the inside is real — and it takes time, the right conversations, and honest reflection to close it.</p>
-                        <p class="capability-body">Coaching with Kash Haroon gives you a private space to make sense of your experience, develop your own leadership identity, and build the clarity and confidence to lead — without pretending you have it all figured out.</p>
-                        <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
-                            <a href="mailto:admin@intelligentod.co.uk" class="hero-btn-primary sky-btn">Book a Free Chemistry Call</a>
-                            <span class="secondary-text" style="display: block; margin-top: 0.5rem; font-size: 0.85rem;">A 30-minute conversation. No obligation. Just an honest discussion about whether we're the right fit.</span>
-                        </div>
-                    </div>
-
-                    <!-- CARD 1B — THE ESTABLISHED LEADER -->
-                    <div class="capability-card glass-card">
-                        <h3 class="card-title">You lead people. And right now, something is harder than it should be.</h3>
-                        <div class="capability-statements" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.5;">
-                            <p style="margin-bottom: 0.5rem;">My team has just been through a restructure and my manager is acting like it's business as usual. How do I name the grief in the room without looking like I'm the one who hasn't moved on?</p>
-                            <p style="margin-bottom: 0.5rem;">I keep saying yes because my standards won't let me do it badly. When does dedication become self-destruction?</p>
-                            <p style="margin-bottom: 0.5rem;">I've shifted from rescuer to leader but rescuing is what got me promoted. How do I change a pattern the whole team has come to rely on?</p>
-                            <p style="margin-bottom: 0.5rem;">My line manager dismisses my concerns and doesn't engage with what I bring. How do I manage upwards without it looking like I'm working around her?</p>
-                            <p style="margin-bottom: 0.5rem;">Leadership want me to create psychological safety. But the organisation consistently fails to act on what gets said. How do I keep inviting honesty when the system punishes it?</p>
-                            <p style="margin-bottom: 1rem;">During the most difficult change my team has experienced, senior leadership went quiet. How do I lead my people through loss when the leaders above me have gone missing?</p>
-                        </div>
-                        <p class="capability-body" style="margin-bottom: 1rem;">These are the conversations that don't make it into a performance review. The ones that sit with you on the drive home. The ones that shape how you show up every day — whether you name them or not.</p>
-                        <p class="capability-body">Working with Kash Haroon at this level means getting an honest picture of what is actually happening — in you, in your team, and in the system around you. And building from there.</p>
-                        <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
-                            <a href="mailto:admin@intelligentod.co.uk" class="hero-btn-primary sky-btn">Book a Free Chemistry Call</a>
-                            <span class="secondary-text" style="display: block; margin-top: 0.5rem; font-size: 0.85rem;">A 30-minute conversation. No obligation. Just an honest discussion about whether we're the right fit.</span>
-                        </div>
-                    </div>
-
-                    <!-- CARD 2 — BUILD CAPABILITY -->
-                    <div class="capability-card glass-card">
-                        <h3 class="card-title">Build the capability your organisation actually needs.</h3>
-                        <div class="capability-statements" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.5;">
-                            <p style="margin-bottom: 0.5rem;">We want to be more diverse but don't know where to start.</p>
-                            <p style="margin-bottom: 0.5rem;">I want to get the best out of my people but don't know where to start.</p>
-                            <p style="margin-bottom: 0.5rem;">My team is full of talented individuals but they can't find a way of working together.</p>
-                            <p style="margin-bottom: 0.5rem;">My managers are not leading.</p>
-                            <p style="margin-bottom: 0.5rem;">We've done the EDI training. Nothing has actually changed.</p>
-                            <p style="margin-bottom: 0.5rem;">My team is delivering but there's no real cohesion underneath it.</p>
-                            <p style="margin-bottom: 0.5rem;">I've been asked to lead a change I haven't been equipped for.</p>
-                            <p style="margin-bottom: 0.5rem;">The culture on paper looks nothing like the culture in the room.</p>
-                            <p style="margin-bottom: 1rem;">We know development matters. We just can't find the space for it.</p>
-                        </div>
-                        <p class="capability-body" style="margin-bottom: 1rem;">Most development programmes deliver knowledge. We find ways to build real practice — the kind that stays in the room after the session is done.</p>
-                        <p class="capability-body" style="margin-bottom: 1rem;">Using a tried and tested framework, we design development that works at three levels simultaneously. Not just what people know. Not just what they can do. But who they are becoming as leaders, practitioners, and agents of change.</p>
-                        <div class="capability-subsections">
-                            <div class="sub-section" style="margin-bottom: 0.75rem;">
-                                <strong>Navigate and lead change.</strong> Leaders who hold their nerve in uncertainty, model the behaviours they're asking of others, and stay grounded when the system pushes back. Able to diagnose what's driving resistance and bring people with them through transition.
-                            </div>
-                            <div class="sub-section" style="margin-bottom: 0.75rem;">
-                                <strong>Develop a coaching culture.</strong> Managers who approach every conversation with curiosity rather than judgement. Able to hold a coaching conversation in the middle of a busy week, not just in a formal one-to-one.
-                            </div>
-                            <div class="sub-section">
-                                <strong>Lead inclusively and anti-racistly.</strong> Leaders who understand their own positionality, take accountability for the power they hold, and model inclusive practice visibly and consistently.
-                            </div>
-                        </div>
-                        <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
-                            <a href="#contact" class="hero-btn-primary sky-btn">Tell Us What You Need</a>
-                        </div>
-                    </div>
-
-                    <!-- CARD 4 — PRACTITIONER RESOURCE HUB -->
-                    <div class="capability-card glass-card">
-                        <h3 class="card-title">Looking for the right tool for the problem in front of you?</h3>
-                        <div class="capability-statements" style="font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.5;">
-                            <p style="margin-bottom: 0.5rem;">I need a diagnostic but don't know where to start.</p>
-                            <p style="margin-bottom: 0.5rem;">I'm facilitating a session next week and I'm building from scratch again.</p>
-                            <p style="margin-bottom: 0.5rem;">I know what good looks like — I just need a framework I can trust.</p>
-                            <p style="margin-bottom: 0.5rem;">I want to use AI in my OD work but I don't know how to do it well.</p>
-                            <p style="margin-bottom: 1rem;">I've found something that works and I want to get better at it.</p>
-                        </div>
-                        <p class="capability-body" style="margin-bottom: 1rem;">The Intelligent OD resource library brings together twenty years of practitioner-tested tools, templates, and frameworks — built for real situations, not textbook ones.</p>
-                        <p class="capability-body" style="margin-bottom: 1rem;">Browse diagnostic tools, facilitation guides, culture change frameworks, coaching resources, and AI-augmented templates. Some are free. Most cost less than a coffee. The serious stuff costs a little more — and is worth considerably more than that.</p>
-                        <p class="capability-body" style="margin-bottom: 1rem;">New to the field or twenty years in, there's something here that will save you time and make your work sharper.</p>
-                        
-                        <div class="featured-resource">
-                            <strong>AI-augmented tools:</strong>
-                            <p>A growing set of resources designed specifically for practitioners who want to use AI intelligently in their OD work. Not AI replacing practice. AI extending it — helping you diagnose faster, design better, and evidence impact more clearly.</p>
-                        </div>
-                        <div class="card-actions" style="margin-top: auto; padding-top: 1.5rem;">
-                            <a href="templates.html" class="hero-btn-primary sky-btn">Browse the Library</a>
-                            <span class="secondary-text" style="display: block; margin-top: 0.5rem; font-size: 0.85rem;">Free resources available. No account needed to browse.</span>
-                        </div>
-                    </div>
+        <!-- Section 3: Interactive Reflection Quiz -->
+        <section class="quiz-embed-section" id="quiz" style="background-color: #FDFCFB; padding: 5rem 0;">
+            <div class="container" style="max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 1.5rem;">
+                <div class="iframe-wrapper" style="height: 750px; background-color: #FDFCFB; border: none; overflow: hidden;">
+                    <iframe src="quiz.html" width="100%" height="100%" style="border: none; display: block;"></iframe>
                 </div>
             </div>
         </section>

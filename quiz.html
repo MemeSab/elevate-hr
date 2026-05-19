@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection | Kash Haroon</title>
+    <meta name="description" content="A short reflective quiz to point you toward the conversation, support, or resource most likely to help right now.">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+    <!-- Minimal Header -->
+    <header class="quiz-header">
+        <a href="index.html" class="logo-link">
+            <!-- Using text logo for minimal aesthetic if image is too dark-mode specific -->
+            <span class="logo-text">Kash Haroon</span>
+        </a>
+        <a href="index.html" class="close-btn">Exit</a>
+    </header>
+
+    <main class="quiz-container">
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <!-- Start Screen -->
+        <section class="quiz-screen active" id="screen-start">
+            <div class="content-wrapper text-center">
+                <h1>What Kind of Support Would Help Most Right Now?</h1>
+                <p class="intro-text">Leadership and organisational challenges rarely fit neatly into boxes. This short reflective quiz helps point you toward the conversation, support, or resource most likely to help right now.</p>
+                <div class="meta-info">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>Estimated time: 2 minutes</span>
+                </div>
+                <button class="quiz-btn primary" onclick="startQuiz()">Begin</button>
+            </div>
+        </section>
+
+        <!-- Question 1 -->
+        <section class="quiz-screen" id="screen-q1">
+            <div class="content-wrapper">
+                <span class="question-number">Question 1 of 5</span>
+                <h2>What best describes your current role?</h2>
+                <div class="options-grid">
+                    <button class="option-btn" data-outcome="1">I’m stepping into leadership for the first time</button>
+                    <button class="option-btn" data-outcome="1,2">I manage people or teams</button>
+                    <button class="option-btn" data-outcome="2,3">I lead managers or departments</button>
+                    <button class="option-btn" data-outcome="3">I support organisational development / culture / people work</button>
+                    <button class="option-btn" data-outcome="4">I’m exploring resources for myself or my organisation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question 2 -->
+        <section class="quiz-screen" id="screen-q2">
+            <div class="content-wrapper">
+                <span class="question-number">Question 2 of 5</span>
+                <h2>Which statement feels most true right now?</h2>
+                <div class="options-grid">
+                    <button class="option-btn" data-outcome="1">I feel unsure of myself in leadership</button>
+                    <button class="option-btn" data-outcome="2">I feel stretched too thin by responsibility</button>
+                    <button class="option-btn" data-outcome="2,3">My team is struggling through change or uncertainty</button>
+                    <button class="option-btn" data-outcome="3">Our organisation has cultural or leadership issues beneath the surface</button>
+                    <button class="option-btn" data-outcome="4">I need practical tools/frameworks I can apply quickly</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question 3 -->
+        <section class="quiz-screen" id="screen-q3">
+            <div class="content-wrapper">
+                <span class="question-number">Question 3 of 5</span>
+                <h2>Where is the challenge showing up most?</h2>
+                <div class="options-grid">
+                    <button class="option-btn" data-outcome="1">In my confidence or sense of identity</button>
+                    <button class="option-btn" data-outcome="2">In difficult conversations and relationships</button>
+                    <button class="option-btn" data-outcome="2,3">In team dynamics or morale</button>
+                    <button class="option-btn" data-outcome="3">In organisational culture or leadership systems</button>
+                    <button class="option-btn" data-outcome="4">In needing practical structure, tools or facilitation support</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question 4 -->
+        <section class="quiz-screen" id="screen-q4">
+            <div class="content-wrapper">
+                <span class="question-number">Question 4 of 5</span>
+                <h2>What kind of support would feel most valuable?</h2>
+                <div class="options-grid">
+                    <button class="option-btn" data-outcome="1">A private space to think honestly and reflect</button>
+                    <button class="option-btn" data-outcome="2">Support navigating leadership complexity</button>
+                    <button class="option-btn" data-outcome="2,3">Help developing my team or managers</button>
+                    <button class="option-btn" data-outcome="3">Structured organisational development support</button>
+                    <button class="option-btn" data-outcome="4">Access to frameworks, diagnostics and practical tools</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question 5 -->
+        <section class="quiz-screen" id="screen-q5">
+            <div class="content-wrapper">
+                <span class="question-number">Question 5 of 5</span>
+                <h2>What would success look like in the next 6 months?</h2>
+                <div class="options-grid">
+                    <button class="option-btn" data-outcome="1">Feeling more confident and grounded as a leader</button>
+                    <button class="option-btn" data-outcome="2">Leading without constantly firefighting</button>
+                    <button class="option-btn" data-outcome="2,3">Building healthier team dynamics</button>
+                    <button class="option-btn" data-outcome="3">Creating meaningful organisational change</button>
+                    <button class="option-btn" data-outcome="4">Having practical systems and tools that save time and improve impact</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question 6 (Optional Text) -->
+        <section class="quiz-screen" id="screen-q6">
+            <div class="content-wrapper">
+                <span class="question-number">Final Question (Optional)</span>
+                <h2>What feels hardest right now?</h2>
+                <p class="subtitle">If you'd like, share a brief thought on what is taking up the most mental space.</p>
+                <div class="input-group">
+                    <textarea id="hardest-input" rows="4" placeholder="Type your thoughts here..."></textarea>
+                </div>
+                <div class="btn-group">
+                    <button class="quiz-btn secondary" onclick="skipAndCapture()">Skip</button>
+                    <button class="quiz-btn primary" onclick="submitTextAndCapture()">Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Capture Screen -->
+        <section class="quiz-screen" id="screen-capture">
+            <div class="content-wrapper text-center">
+                <h2>Where should we send your recommended next steps?</h2>
+                <p class="subtitle">Enter your email to view your personalized reflection outcome and resources.</p>
+                <div class="input-group center-input">
+                    <input type="email" id="email-input" placeholder="Your email address" required>
+                </div>
+                <button class="quiz-btn primary" onclick="showResults()">See My Results</button>
+                <p class="privacy-note">We respect your privacy. No spam, ever.</p>
+            </div>
+        </section>
+
+        <!-- Loading Screen -->
+        <section class="quiz-screen" id="screen-loading">
+            <div class="content-wrapper text-center">
+                <div class="spinner"></div>
+                <h2>Synthesizing your reflections...</h2>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section class="quiz-screen" id="screen-results">
+            <div class="content-wrapper result-wrapper">
+                <span class="eyebrow">Your Recommended Path</span>
+                <h1 id="result-headline">Headline</h1>
+                <p class="result-body" id="result-body">Body</p>
+                
+                <div class="result-actions">
+                    <a href="#" class="quiz-btn primary" id="primary-cta">Primary CTA</a>
+                    <a href="#" class="quiz-btn secondary outline" id="secondary-cta">Secondary CTA</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/quiz.js"></script>
+</body>
+</html>
