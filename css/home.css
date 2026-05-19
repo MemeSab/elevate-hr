@@ -439,11 +439,11 @@
 }
 
 .case-studies .section-header h2 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .case-studies .section-header p {
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 .case-grid {
@@ -496,11 +496,11 @@
 }
 
 .methodology .section-header h2 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .methodology .section-header p {
-  color: #cbd5e1;
+  color: #cbd5e1 !important;
 }
 
 .method-grid {

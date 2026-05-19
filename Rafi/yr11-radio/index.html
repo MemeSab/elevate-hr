@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YR11 Radio - The #1 Station for Teens</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <a href="index.html" class="logo-area" style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/logo.png" alt="YR11 Logo" style="height: 65px; border-radius: 8px;">
+        </a>
+        
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="music.html">Music</a>
+            <a href="podcasts.html">Podcasts</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="#" onclick="toggleSearch()" id="searchIcon">🔍 Search</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="signup.html" class="btn">Sign Up</a>
+            <a href="login.html" class="btn btn-primary">Log In</a>
+        </div>
+    </header>
+
+    <!-- JS Search Overlay Element -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <span class="close-search" onclick="toggleSearch()">✕</span>
+            <h3>Search YR11 Radio</h3>
+            <input type="text" placeholder="Click Here To Type...">
+            <button class="btn btn-primary" style="width: 100%;">Search Database</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Welcome to YR11 Radio!</h2>
+        <p>Broadcasting from Sheffield to the UK, Ireland, and Germany. We are officially the 7th largest radio station in Europe. Hit play and vibe with us.</p>
+        <a href="#" class="listen-live-btn">🔴 LISTEN LIVE!</a>
+    </section>
+
+    <!-- Top Hits Grid -->
+    <h3 class="section-title">New and Trending</h3>
+    <section class="circle-grid">
+        
+        <!-- Extracted from PDF: Top Hits, Casual, Podcast etc -->
+        <a href="music.html" style="text-decoration: none; color: inherit;">
+            <article class="circle-card">
+                <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=300&auto=format&fit=crop" alt="Top Hits">
+                <h3>Top Hits!</h3>
+                <p>Live Chart Shows</p>
+            </article>
+        </a>
+
+        <a href="music.html" style="text-decoration: none; color: inherit;">
+            <article class="circle-card">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=300&auto=format&fit=crop" alt="Casual Music">
+                <h3>Casual Chill</h3>
+                <p>Study & Vibes</p>
+            </article>
+        </a>
+
+        <a href="podcasts.html" style="text-decoration: none; color: inherit;">
+            <article class="circle-card">
+                <img src="https://images.unsplash.com/photo-1516280440502-65f54316d2ca?q=80&w=300&auto=format&fit=crop" alt="Podcasts">
+                <h3>Top Podcasts</h3>
+                <p>Interviews & Culture</p>
+            </article>
+        </a>
+
+        <a href="music.html" style="text-decoration: none; color: inherit;">
+            <article class="circle-card">
+                <img src="https://images.unsplash.com/photo-1470229722913-7c090be5c5a4?q=80&w=300&auto=format&fit=crop" alt="Live Event">
+                <h3>New & Trending</h3>
+                <p>Fresh Drops</p>
+            </article>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 YR11 Radio (Sheffield). Built for GCSE Computer Science Coursework.</p>
+        <br>
+        <a href="about.html" class="btn">About Us</a>
+    </footer>
+
+    <!-- Simple JavaScript for the Search Popup Feature -->
+    <script>
+        function toggleSearch() {
+            const overlay = document.getElementById('searchOverlay');
+            if (overlay.style.display === 'flex') {
+                overlay.style.display = 'none';
+            } else {
+                overlay.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>
